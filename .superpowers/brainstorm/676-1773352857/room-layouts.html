@@ -1,0 +1,253 @@
+<h2>Room Layouts with Object Placement</h2>
+<p class="subtitle">Each room shown at 16:9 ratio with object zones marked. Rooms need clear wall space (upper half) for monitors/posters and surface space for books/objects.</p>
+
+<div class="section">
+  <h3>Current pattern (for reference)</h3>
+  <p>Existing rooms follow a consistent layout: <strong>floor in bottom ~30%</strong>, <strong>wall detail in middle band</strong>, <strong>upper wall/ceiling is open space</strong> for hanging objects. The sprite walks along the floor line. Objects sit in 3 zones:</p>
+  <ul>
+    <li><strong>Wall zone</strong> (top 10-55%): monitor-screen, wall-poster, wall-text — hang on the wall</li>
+    <li><strong>Surface zone</strong> (40-70%): book-pedestal, ipad-screen — sit on furniture</li>
+    <li><strong>Floor zone</strong> (bottom 30%): sprite walks here, rarely has objects</li>
+  </ul>
+</div>
+
+<!-- Room 1: Library -->
+<div class="section" style="margin-top:2em;">
+  <h3>1. The Library — Foucault &amp; Ted Nelson</h3>
+  <p><strong>Content:</strong> Pixel character sprites with long quotes (wall-text style). 2-3 scenes, minimal images.</p>
+  <div style="position:relative;width:100%;max-width:640px;aspect-ratio:16/9;background:linear-gradient(180deg, #1a0a2e 0%, #2d1b4e 30%, #3d2b5e 50%, #4a3366 70%, #3d2b1e 70%, #2e1f14 100%);border-radius:4px;overflow:hidden;margin:0.5em 0;">
+    <!-- Bookshelf - LEFT side only, leaving right wall open -->
+    <div style="position:absolute;top:15%;left:3%;width:30%;height:40%;background:linear-gradient(180deg, #5c3a1e, #4a2e16);border-radius:2px;">
+      <div style="position:absolute;top:8%;left:5%;width:10%;height:84%;background:#8b2020;"></div>
+      <div style="position:absolute;top:8%;left:18%;width:8%;height:84%;background:#1a4a6e;"></div>
+      <div style="position:absolute;top:8%;left:29%;width:10%;height:84%;background:#6b6b2e;"></div>
+      <div style="position:absolute;top:8%;left:42%;width:8%;height:84%;background:#2e5a2e;"></div>
+      <div style="position:absolute;top:8%;left:53%;width:12%;height:84%;background:#8b6914;"></div>
+      <div style="position:absolute;top:8%;left:68%;width:9%;height:84%;background:#5a1a1a;"></div>
+      <div style="position:absolute;top:8%;left:80%;width:8%;height:84%;background:#2e4a6e;"></div>
+      <div style="position:absolute;top:8%;left:91%;width:7%;height:84%;background:#6e2e4a;"></div>
+    </div>
+    <!-- Candelabra on shelf -->
+    <div style="position:absolute;top:10%;left:18%;width:30px;height:30px;background:radial-gradient(circle,rgba(255,200,100,0.5) 0%,transparent 70%);"></div>
+    <!-- RIGHT WALL: open for wall-text/quotes -->
+    <div style="position:absolute;top:12%;right:5%;width:50%;height:48%;border:2px dashed rgba(255,204,0,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(255,204,0,0.5);font-size:11px;font-family:monospace;">WALL-TEXT / QUOTE ZONE</span>
+    </div>
+    <!-- Checkerboard floor -->
+    <div style="position:absolute;bottom:0;left:0;width:100%;height:30%;background:repeating-conic-gradient(#3d2b1e 0% 25%, #2e1f14 0% 50%) 0 0 / 40px 40px;"></div>
+    <!-- Sprite zone -->
+    <div style="position:absolute;bottom:30%;left:10%;width:64px;height:96px;border:2px dashed rgba(100,200,255,0.3);border-radius:2px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(100,200,255,0.5);font-size:7px;font-family:monospace;">SPRITE</span>
+    </div>
+  </div>
+  <p style="font-size:0.85em;color:#aaa;">Bookshelves pushed to the left wall, leaving a large open right wall for quote text. Floor is clear for sprite movement.</p>
+</div>
+
+<!-- Room 2: Kitchen -->
+<div class="section" style="margin-top:2em;">
+  <h3>2. The Kitchen — Craft of the Essay</h3>
+  <p><strong>Content:</strong> einstein_howitworks.webp, grammarly.png, smbc_artisanal.png — monitor-screen or wall-poster style. 2-3 scenes.</p>
+  <div style="position:relative;width:100%;max-width:640px;aspect-ratio:16/9;background:linear-gradient(180deg, #2e3a1e 0%, #3a4a2a 25%, #4a5a3a 50%, #3a4a2a 70%, #2e2418 70%, #221c12 100%);border-radius:4px;overflow:hidden;margin:0.5em 0;">
+    <!-- Upper cabinets - compact, left side -->
+    <div style="position:absolute;top:5%;left:3%;width:18%;height:22%;background:#6b5a3a;border:2px solid #5a4a2e;border-radius:2px;"></div>
+    <div style="position:absolute;top:5%;left:23%;width:14%;height:22%;background:#6b5a3a;border:2px solid #5a4a2e;border-radius:2px;"></div>
+    <!-- Window -->
+    <div style="position:absolute;top:3%;left:40%;width:18%;height:25%;background:linear-gradient(180deg,#4a6a3a,#5a7a4a);border:3px solid #5a4a2e;"></div>
+    <!-- OPEN WALL RIGHT: for images -->
+    <div style="position:absolute;top:5%;right:3%;width:35%;height:40%;border:2px dashed rgba(255,204,0,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(255,204,0,0.5);font-size:11px;font-family:monospace;">MONITOR / POSTER ZONE</span>
+    </div>
+    <!-- Counter -->
+    <div style="position:absolute;top:52%;left:0;width:60%;height:6%;background:#8b7a5a;box-shadow:0 2px 4px rgba(0,0,0,0.3);"></div>
+    <!-- Counter surface zone -->
+    <div style="position:absolute;top:35%;left:5%;width:50%;height:17%;border:2px dashed rgba(100,255,100,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(100,255,100,0.5);font-size:9px;font-family:monospace;">SURFACE / BOOK ZONE</span>
+    </div>
+    <!-- Warm light -->
+    <div style="position:absolute;top:0;left:45%;width:50px;height:60px;background:radial-gradient(ellipse,rgba(200,180,100,0.25) 0%,transparent 70%);"></div>
+    <!-- Sprite zone -->
+    <div style="position:absolute;bottom:30%;left:15%;width:64px;height:96px;border:2px dashed rgba(100,200,255,0.3);border-radius:2px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(100,200,255,0.5);font-size:7px;font-family:monospace;">SPRITE</span>
+    </div>
+  </div>
+  <p style="font-size:0.85em;color:#aaa;">Cabinets and window pushed left. Large open right wall for monitor-screen images. Counter provides a secondary surface zone for book objects.</p>
+</div>
+
+<!-- Room 3: Laboratory -->
+<div class="section" style="margin-top:2em;">
+  <h3>3. Dr. Fred's Laboratory — Claude as Author</h3>
+  <p><strong>Content:</strong> claude_author.png, claude_process.png (monitor-screen), then authorfunction.html animation goes FULLSCREEN. 3 scenes.</p>
+  <div style="position:relative;width:100%;max-width:640px;aspect-ratio:16/9;background:linear-gradient(180deg, #0a1a2e 0%, #0e2a3e 35%, #122e44 65%, #1a3a4e 70%, #1a2a3a 70%, #0e1e2e 100%);border-radius:4px;overflow:hidden;margin:0.5em 0;">
+    <!-- Tubes LEFT side -->
+    <div style="position:absolute;top:10%;left:5%;width:10px;height:55%;background:rgba(100,220,255,0.15);border:1px solid rgba(100,220,255,0.3);border-radius:5px;">
+      <div style="position:absolute;bottom:25%;left:1px;width:6px;height:6px;background:rgba(100,220,255,0.5);border-radius:50%;"></div>
+    </div>
+    <div style="position:absolute;top:15%;left:12%;width:14px;height:45%;background:rgba(180,100,255,0.15);border:1px solid rgba(180,100,255,0.3);border-radius:7px;">
+      <div style="position:absolute;bottom:35%;left:3px;width:6px;height:6px;background:rgba(180,100,255,0.4);border-radius:50%;"></div>
+    </div>
+    <!-- MAIN MONITOR ZONE: center-right, large -->
+    <div style="position:absolute;top:8%;right:5%;width:55%;height:50%;border:2px dashed rgba(255,204,0,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(255,204,0,0.5);font-size:11px;font-family:monospace;">MONITOR-SCREEN ZONE<br><span style="font-size:9px;">(or FULLSCREEN for animation)</span></span>
+    </div>
+    <!-- Wires along bottom of wall -->
+    <div style="position:absolute;top:62%;left:20%;width:50%;height:2px;background:#44aa66;opacity:0.5;"></div>
+    <div style="position:absolute;top:65%;left:25%;width:40%;height:2px;background:#aa4466;opacity:0.5;"></div>
+    <!-- Eerie glow -->
+    <div style="position:absolute;top:25%;left:8%;width:60px;height:60px;background:radial-gradient(circle,rgba(100,220,255,0.12) 0%,transparent 70%);"></div>
+    <!-- Sprite zone -->
+    <div style="position:absolute;bottom:30%;left:8%;width:64px;height:96px;border:2px dashed rgba(100,200,255,0.3);border-radius:2px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(100,200,255,0.5);font-size:7px;font-family:monospace;">SPRITE</span>
+    </div>
+  </div>
+  <p style="font-size:0.85em;color:#aaa;">Tubes and equipment pushed far left. Large center-right zone for monitor content. Animation scene can use fullscreen object type to take over the entire viewport.</p>
+</div>
+
+<!-- Room 4: Ship Corridor -->
+<div class="section" style="margin-top:2em;">
+  <h3>4. Ship Corridor — Multi-Agent Authorship</h3>
+  <p><strong>Content:</strong> openclaw.png, moltbook.png, clawrepublic.webp, clawmanifesto.png, claw_slop.png — book-cover and monitor-screen. 3-4 scenes, heaviest image load.</p>
+  <div style="position:relative;width:100%;max-width:640px;aspect-ratio:16/9;background:linear-gradient(180deg, #0a0e14 0%, #0e1620 35%, #121a24 65%, #0a0e14 70%, #0e1418 70%, #0a0e14 100%);border-radius:4px;overflow:hidden;margin:0.5em 0;">
+    <!-- Ribbed walls - narrow strips on edges -->
+    <div style="position:absolute;top:0;left:0;width:10%;height:70%;background:repeating-linear-gradient(180deg, #1a2030 0px, #1a2030 10px, #0e1620 10px, #0e1620 14px);"></div>
+    <div style="position:absolute;top:0;right:0;width:10%;height:70%;background:repeating-linear-gradient(180deg, #1a2030 0px, #1a2030 10px, #0e1620 10px, #0e1620 14px);"></div>
+    <!-- Ceiling pipes -->
+    <div style="position:absolute;top:6%;left:10%;width:80%;height:3px;background:#2a3444;"></div>
+    <div style="position:absolute;top:11%;left:10%;width:80%;height:3px;background:#2a3444;"></div>
+    <!-- Warning lights -->
+    <div style="position:absolute;top:16%;left:12%;width:6px;height:6px;background:#ff8800;border-radius:50%;box-shadow:0 0 10px #ff8800;"></div>
+    <div style="position:absolute;top:16%;right:12%;width:6px;height:6px;background:#ff8800;border-radius:50%;box-shadow:0 0 10px #ff8800;"></div>
+    <!-- LEFT console (small) -->
+    <div style="position:absolute;top:25%;left:12%;width:15%;height:25%;background:#0e1418;border:2px solid #2a3444;border-radius:2px;">
+      <div style="position:absolute;top:12%;left:12%;width:5px;height:5px;background:#44ff44;border-radius:50%;box-shadow:0 0 3px #44ff44;"></div>
+      <div style="position:absolute;top:12%;left:40%;width:5px;height:5px;background:#ff4444;border-radius:50%;box-shadow:0 0 3px #ff4444;"></div>
+      <div style="position:absolute;top:12%;left:68%;width:5px;height:5px;background:#44ff44;border-radius:50%;box-shadow:0 0 3px #44ff44;"></div>
+      <div style="position:absolute;top:35%;left:10%;width:78%;height:2px;background:#224433;"></div>
+      <div style="position:absolute;top:48%;left:10%;width:55%;height:2px;background:#224433;"></div>
+    </div>
+    <!-- CENTER-RIGHT: main content zone -->
+    <div style="position:absolute;top:15%;left:32%;width:55%;height:45%;border:2px dashed rgba(255,204,0,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(255,204,0,0.5);font-size:10px;font-family:monospace;">MONITOR / BOOK-COVER ZONE<br><span style="font-size:8px;">Fits 1-2 objects side by side</span></span>
+    </div>
+    <!-- Green drips -->
+    <div style="position:absolute;top:11%;left:35%;width:4px;height:18px;background:linear-gradient(180deg, #2a5a3a, #44aa66, transparent);border-radius:0 0 2px 2px;opacity:0.6;"></div>
+    <div style="position:absolute;top:11%;left:60%;width:3px;height:12px;background:linear-gradient(180deg, #2a5a3a, #44aa66, transparent);border-radius:0 0 2px 2px;opacity:0.4;"></div>
+    <!-- Grated floor -->
+    <div style="position:absolute;bottom:0;left:0;width:100%;height:30%;background:repeating-linear-gradient(90deg, #1a2030 0px, #1a2030 7px, #0e1418 7px, #0e1418 9px),linear-gradient(180deg, #1a2030, #0e1418);"></div>
+    <!-- Floor glow -->
+    <div style="position:absolute;bottom:27%;left:10%;width:80%;height:3px;background:linear-gradient(90deg, transparent, rgba(255,136,0,0.3), rgba(255,136,0,0.4), rgba(255,136,0,0.3), transparent);"></div>
+    <!-- Fog -->
+    <div style="position:absolute;bottom:18%;left:0;width:100%;height:15%;background:linear-gradient(180deg, transparent, rgba(40,60,80,0.12));"></div>
+    <!-- Sprite zone -->
+    <div style="position:absolute;bottom:30%;left:12%;width:64px;height:96px;border:2px dashed rgba(100,200,255,0.3);border-radius:2px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(100,200,255,0.5);font-size:7px;font-family:monospace;">SPRITE</span>
+    </div>
+  </div>
+  <p style="font-size:0.85em;color:#aaa;">Console pushed to far left. Large center-right zone (55% width) can hold 1-2 objects per scene. Across 3-4 scenes, all 5 images rotate through the same zone consistently.</p>
+</div>
+
+<!-- Room 5: Typing Office -->
+<div class="section" style="margin-top:2em;">
+  <h3>5. The Typing Office — Track Changes</h3>
+  <p><strong>Content:</strong> trackchanges.jpg, trackchanges_excerpt.png — monitor-screen or wall-poster. 2 scenes.</p>
+  <div style="position:relative;width:100%;max-width:640px;aspect-ratio:16/9;background:linear-gradient(180deg, #2e2820 0%, #3a3228 20%, #443c30 45%, #4a4030 50%, #4a4030 70%, #2e2418 70%, #221c12 100%);border-radius:4px;overflow:hidden;margin:0.5em 0;">
+    <!-- Wood paneling - subtle vertical lines across back wall -->
+    <div style="position:absolute;top:0;left:0;width:100%;height:70%;background:
+      repeating-linear-gradient(90deg, transparent 0px, transparent 78px, rgba(50,40,28,0.5) 78px, rgba(50,40,28,0.5) 80px);"></div>
+    <!-- Wainscoting rail -->
+    <div style="position:absolute;top:50%;left:0;width:100%;height:3px;background:#5a5040;"></div>
+    <!-- Diplomas LEFT wall -->
+    <div style="position:absolute;top:8%;left:4%;width:10%;height:10%;background:#3a3020;border:2px solid #5a5040;"></div>
+    <div style="position:absolute;top:8%;left:17%;width:8%;height:12%;background:#3a3020;border:2px solid #5a5040;"></div>
+    <!-- RIGHT WALL: open for content -->
+    <div style="position:absolute;top:5%;right:3%;width:45%;height:42%;border:2px dashed rgba(255,204,0,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(255,204,0,0.5);font-size:11px;font-family:monospace;">WALL-POSTER / MONITOR ZONE</span>
+    </div>
+    <!-- Desk -->
+    <div style="position:absolute;top:55%;left:20%;width:45%;height:6%;background:linear-gradient(180deg, #5a4a30, #4a3a20);border-radius:2px;box-shadow:0 3px 6px rgba(0,0,0,0.4);"></div>
+    <div style="position:absolute;bottom:12%;left:23%;width:3px;height:16%;background:#4a3a20;"></div>
+    <div style="position:absolute;bottom:12%;left:62%;width:3px;height:16%;background:#4a3a20;"></div>
+    <!-- Typewriter on desk -->
+    <div style="position:absolute;top:47%;left:30%;width:16%;height:8%;background:#1a1a1e;border-radius:3px 3px 0 0;">
+      <div style="position:absolute;top:-3px;left:15%;width:70%;height:4px;background:#2a2a2e;border-radius:2px;"></div>
+      <div style="position:absolute;top:-14px;left:25%;width:50%;height:14px;background:#f0e8d8;border-radius:1px;"></div>
+      <div style="position:absolute;bottom:2px;left:10%;width:80%;height:3px;background:repeating-linear-gradient(90deg, #3a3a3e 0px, #3a3a3e 3px, #1a1a1e 3px, #1a1a1e 5px);"></div>
+    </div>
+    <!-- Green banker's lamp -->
+    <div style="position:absolute;top:50%;left:52%;width:3px;height:8px;background:#8b7a5a;"></div>
+    <div style="position:absolute;top:45%;left:48%;width:12%;height:6px;background:linear-gradient(180deg, #2a6a3a, #3a8a4a);border-radius:50% 50% 0 0;border-bottom:2px solid #8b7a5a;"></div>
+    <div style="position:absolute;top:48%;left:44%;width:80px;height:45px;background:radial-gradient(ellipse at 50% 0%,rgba(100,180,100,0.2) 0%,rgba(100,180,100,0.08) 40%,transparent 70%);"></div>
+    <!-- Rug -->
+    <div style="position:absolute;bottom:4%;left:15%;width:55%;height:7%;background:linear-gradient(180deg, #5a2020, #4a1818);border:1px solid #6a3030;border-radius:2px;opacity:0.6;"></div>
+    <!-- Sprite zone -->
+    <div style="position:absolute;bottom:30%;left:5%;width:64px;height:96px;border:2px dashed rgba(100,200,255,0.3);border-radius:2px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(100,200,255,0.5);font-size:7px;font-family:monospace;">SPRITE</span>
+    </div>
+  </div>
+  <p style="font-size:0.85em;color:#aaa;">Typewriter and lamp are permanent room fixtures (left-center desk). Right wall is fully open for image content. Diplomas add character without competing for object space.</p>
+</div>
+
+<!-- Room 6: Observatory -->
+<div class="section" style="margin-top:2em;">
+  <h3>6. The Observatory — New Ending</h3>
+  <p><strong>Content:</strong> newending.png, endingexcerpt.png, anthropiccode.png — monitor-screen and wall-text. 2-3 scenes.</p>
+  <div style="position:relative;width:100%;max-width:640px;aspect-ratio:16/9;background:linear-gradient(180deg, #000814 0%, #001d3d 30%, #003566 55%, #001d3d 70%, #1a1a2e 70%, #0e0e1e 100%);border-radius:4px;overflow:hidden;margin:0.5em 0;">
+    <!-- Stars -->
+    <div style="position:absolute;top:6%;left:12%;width:3px;height:3px;background:#fff;border-radius:50%;box-shadow:0 0 4px #fff;"></div>
+    <div style="position:absolute;top:10%;left:38%;width:2px;height:2px;background:#ddf;border-radius:50%;box-shadow:0 0 3px #ddf;"></div>
+    <div style="position:absolute;top:4%;left:62%;width:3px;height:3px;background:#fff;border-radius:50%;box-shadow:0 0 5px #fff;"></div>
+    <div style="position:absolute;top:15%;left:25%;width:2px;height:2px;background:#ffd;border-radius:50%;box-shadow:0 0 3px #ffd;"></div>
+    <div style="position:absolute;top:12%;left:80%;width:2px;height:2px;background:#dff;border-radius:50%;box-shadow:0 0 3px #dff;"></div>
+    <div style="position:absolute;top:20%;left:50%;width:3px;height:3px;background:#fff;border-radius:50%;box-shadow:0 0 4px #fff;"></div>
+    <div style="position:absolute;top:8%;left:90%;width:2px;height:2px;background:#ffa;border-radius:50%;box-shadow:0 0 3px #ffa;"></div>
+    <!-- Telescope - far left -->
+    <div style="position:absolute;top:28%;left:8%;width:22%;height:5px;background:linear-gradient(90deg, #4a4a5a, #6a6a7a);transform:rotate(-20deg);border-radius:2px;"></div>
+    <div style="position:absolute;top:40%;left:15%;width:3px;height:25%;background:#5a5a6a;"></div>
+    <!-- CENTER-RIGHT: main content zone -->
+    <div style="position:absolute;top:8%;left:30%;width:60%;height:52%;border:2px dashed rgba(255,204,0,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(255,204,0,0.5);font-size:11px;font-family:monospace;">MONITOR / WALL-TEXT ZONE<br><span style="font-size:9px;">Stars visible behind transparent areas</span></span>
+    </div>
+    <!-- Warm light from below -->
+    <div style="position:absolute;bottom:22%;left:35%;width:50px;height:30px;background:radial-gradient(ellipse,rgba(255,200,100,0.15) 0%,transparent 70%);"></div>
+    <!-- Sprite zone -->
+    <div style="position:absolute;bottom:30%;left:5%;width:64px;height:96px;border:2px dashed rgba(100,200,255,0.3);border-radius:2px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:rgba(100,200,255,0.5);font-size:7px;font-family:monospace;">SPRITE</span>
+    </div>
+  </div>
+  <p style="font-size:0.85em;color:#aaa;">Telescope pushed far left. Starfield fills upper area with a massive open zone for content. The night sky behind objects creates a contemplative, expansive feel for the ending.</p>
+</div>
+
+<div class="section" style="margin-top:2em;padding:1em;background:rgba(255,255,255,0.05);border-radius:8px;">
+  <h3>Consistency pattern across all 6 rooms</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:0.85em;">
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.15);font-weight:bold;">
+      <td style="padding:8px;">Element</td>
+      <td style="padding:8px;">Position</td>
+      <td style="padding:8px;">All rooms?</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+      <td style="padding:8px;">Floor line</td>
+      <td style="padding:8px;">Bottom 30%</td>
+      <td style="padding:8px;">Yes — matches existing rooms</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+      <td style="padding:8px;">Sprite</td>
+      <td style="padding:8px;">Left 5-15%, on floor line</td>
+      <td style="padding:8px;">Yes — consistent left positioning</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+      <td style="padding:8px;">Room furniture/detail</td>
+      <td style="padding:8px;">Left 3-30%</td>
+      <td style="padding:8px;">Yes — keeps right side clear</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+      <td style="padding:8px;">Primary content zone</td>
+      <td style="padding:8px;">Top 5-15% to 55-60%, right 30-95%</td>
+      <td style="padding:8px;">Yes — all rooms use same region</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;">Secondary surface zone</td>
+      <td style="padding:8px;">40-55% height, left-center</td>
+      <td style="padding:8px;">Kitchen &amp; Office only (have desks/counters)</td>
+    </tr>
+  </table>
+</div>

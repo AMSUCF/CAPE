@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Creative AI, Play &amp; Empowerment: Digital Humanities (and Humanity) in the Age of AI</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/scumm.css">
+  <link rel="stylesheet" href="css/rooms.css">
+  <link rel="stylesheet" href="css/sprites.css">
+  <link rel="stylesheet" href="css/transitions.css">
+
+  <style>
+    /* Inline fallback in case font file doesn't load */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=block');
+  </style>
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div id="preloader">
+    <div id="preloader-title">LOADING...</div>
+    <div id="progress-bar-outer">
+      <div id="progress-bar-inner"></div>
+    </div>
+    <div id="preloader-status">Preparing adventure...</div>
+  </div>
+
+  <!-- ========== GAME CONTAINER ========== -->
+  <div id="game">
+
+    <!-- Room Name Bar -->
+    <div id="room-bar"><span id="room-name">The Beginning</span><span id="score">Score: 0 of 55</span></div>
+
+    <!-- Room Viewport -->
+    <div id="viewport">
+
+      <!-- Room (background + template overlays) -->
+      <div id="room"></div>
+
+      <!-- Objects layer -->
+      <div id="objects"></div>
+
+      <!-- Character Sprite -->
+      <div id="sprite" class="hidden"></div>
+
+      <!-- Transition Overlay -->
+      <div id="transition-overlay"></div>
+
+      <!-- Speed Run badge (shown on autoplay start) -->
+      <div id="speedrun-badge" class="hidden">
+        <span class="sr-icon">&#9654;&#9654;</span>
+        <span class="sr-text">SPEED RUN</span>
+        <span class="sr-mult">3X</span>
+      </div>
+
+      <!-- Title Screen Overlay -->
+      <div id="title-screen">
+        <div class="title-border">
+          <div class="title-main">Creative AI, Play &amp; Empowerment</div>
+          <div class="title-sub">
+            <span class="title-subtitle">Digital Humanities (and Humanity) in the Age of AI</span><br><br>
+            <strong>Anastasia Salter</strong><br>
+            Professor of English, UCF<br>
+            Director, Texts & Technology PhD<br>
+            President, Electronic Literature Organization
+          </div>
+          <div class="title-prompt">PRESS ANY KEY OR TAP TO START</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Dialogue Text Bar -->
+    <div id="dialogue">
+      <div id="dialogue-text" class="done"></div>
+    </div>
+
+    <!-- Verb Bar (decorative) -->
+    <div id="verb-bar">
+      <button class="verb" data-verb="open">Open</button>
+      <button class="verb" data-verb="close">Close</button>
+      <button class="verb" data-verb="look">Look at</button>
+      <button class="verb" data-verb="pickup">Pick up</button>
+      <button class="verb" data-verb="talk">Talk to</button>
+      <button class="verb" data-verb="use">Use</button>
+      <span class="verb-sep"></span>
+      <button class="verb" id="jump-btn" data-verb="jump">Jump</button>
+      <button class="verb" id="autoplay-btn" data-verb="play">Play</button>
+    </div>
+
+    <!-- Jump-to-scene overlay -->
+    <div id="jump-list" class="hidden" role="dialog" aria-label="Jump to scene">
+      <div class="jump-header">
+        <span class="jump-title">JUMP TO SCENE</span>
+        <button class="jump-close" id="jump-close" aria-label="Close">&#x2715;</button>
+      </div>
+      <div class="jump-grid" id="jump-grid"></div>
+      <div class="jump-hint">Click a scene or press <kbd>Esc</kbd> to close</div>
+    </div>
+
+    <!-- Scene Counter (debug, toggle with D) -->
+    <div id="scene-counter">Scene 0/55</div>
+
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="js/scenes.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/transitions.js"></script>
+  <script src="js/preloader.js"></script>
+  <script src="js/autoplay.js"></script>
+  <script src="js/engine.js"></script>
+
+</body>
+</html>

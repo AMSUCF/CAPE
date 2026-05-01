@@ -1,0 +1,145 @@
+How to Write at the End of the World (title)
+
+Anastasia Salter
+Professor of English, UCF
+President, Electronic Literature Organization
+
+--
+Abstract (not visible, use for reference) This talk addresses a question I am frequently asked: Why do I keep writing books? The implied follow-up—does anyone read academic monographs?—points to a broader cultural anxiety. The forms of writing this celebration honors are all, we are told, suffering from a decline in audience. Headlines proclaim the death of literacy and the steady erosion of reading for pleasure. This alleged death of reading, exaggerated though it may be, arrives at a moment when the capacity of computational tools to read and write is expanding rapidly. Large language models are marketed as bringing "PhD-level intelligence" to their tasks. How do we reckon with authorship in the age of AI and amid conditions of widespread anti-intellectualism? What, indeed, is the purpose of our books?
+
+--
+this is the faculty author celebration, not the reading celebration (stats from YouGov survey - https://today.yougov.com/entertainment/articles/53804-most-americans-didnt-read-many-books-in-2025)
+
+images: readingstatsone / readingstatstwo
+
+--
+well, we know something is reading (books3 - https://www.theatlantic.com/technology/archive/2025/09/dataset-books3/683662/ - libgen - 
+
+img: libgen
+img: gen_slide_21_img2
+
+https://www.theatlantic.com/technology/archive/2025/03/search-libgen-data-set/682094/- screenshot of results)
+
+in my field (electronic literature) we've been talking about the end of books for a long time - the hypertext novel was supposed to be the beginning of the end (cite 1992, Coover on end of books - image: coover)
+
+but what happened instead was a different story: one shaped by the platforms on which we author and read on, and the question of who controls them
+
+I'm going to take you through that journey today, but through the lens of my own authorship, with apologies for the navelgazing
+
+image: quest
+
+this was my first book - working title was magical books, which was shot down by a table of scholars at the electronic literature organization in favor of a monty python joke
+
+image: python
+
+image: alice
+
+(the Alice ipad app was a hit in 2010. this is perhaps hard to imagine now)
+
+I saw this as an extension of the adventure games I grew up on, which were the subject of much of my graduate research
+
+image: tentacle
+
+I was interested in the tools that made these and who they empower
+
+one of the few women making games in that era was the subject of one of my next books, Jane Jensen
+
+image: Jensen
+
+image: knight
+
+those games inspired people to make not only their own games, but the tools that would allow others to control authorship
+
+image: ags
+
+similar tools (and their fate) was the subject of my next book
+
+image: flash
+image: gen_slide_23_img3 
+image: gen_slide_24_img1
+
+Natalie Lawhead
+"I feel like there's a lot to learn from Flash. As an example of what technology enables for 'the little people', as an example of what it takes to destroy that and basically eradicate a huge portion of digital history, and as an example of how easy it is for something like that to just happen.
+If you look at it through the lens of digital history, it's a good example of how easy it is for something that was really powerful and popular to be lost without much of a trace of what it once was."
+https://www.nathalielawhead.com/candybox/a-short-history-of-flash-the-forgotten-flash-website-movement-when-websites-were-the-new-emerging-artform
+
+image: gen_slide_26_img1
+
+The history of Flash preservation reminds us how much we need to support open data, at a time where many communities are establishing new walls.
+—it's also a reminder of the consequences of over-investing in any proprietary system, especially one that compiles and hides its source code.
+
+image: twining
+
+I happened to be in grad school with the person who would make a tool that would be incredibly important to a wide range of authors working in that same hypertext form Coover thought would overthrow the novel - Chris Klimas's Twine, the subject of my next book
+
+image: twineinterface
+
+image: porpentine
+
+I wrote about the types of games that outsiders create, and the stories they make possible
+
+image: outsider
+
+image: krzexchange
+
+image: krzmachine
+
+this fascination with the type of stories that technology enables has continued to be at the heart of my work
+
+image: undertale
+
+image: badtime
+
+image: undertalehumanity
+
+...which brings us to the end of the world
+
+image: krzruin
+
+AI authorship (and readership) can be part of play - nanogemno, Electronic Literature Organization - and this talk
+
+image: animation of a procedural text, collisions of AI and authorship
+
+my work has always been informed by the tension of what technology drives in creative fields, and the realities of that same technology's amplification of racism, misogyny, and toxicity. The culture wars over AI simply extend that tension.
+
+image: geek
+
+image: aftermath
+
+"Epstein maintained his fascination with games in the years following, emailing back and forth in 2016 with Bitcoin Core contributor Jeremy Rubin about the latter’s idea of a creating “an intellectually sti[m]ulating game where women outperform men,” which, in his mind, would either “provide evidence of universal inferiority which would inform you (society) to not invest in gender diversity as much” or, if the experiment was successful, would help them "learn more about how to get value out of fema[l]e employees." In response to the question of whether any such games already existed, Epstein replied: “motherhood game? card games, video games= hacking. all are games . same result. . poetry. game ma[y]be :).” - quote from src https://aftermath.site/jeffrey-epstein-files-kotick-thiel-xbox-rockstar/
+
+(Toxic Geek Masculinity 2.0 is not going well)
+
+image: fanboy
+
+I find myself trying to write in a landscape in which the things that bring me joy - the platforms and tools that historically have enabled authorship and play - are a source of perpetual despair and frustration
+
+every tool changes our writing
+
+image: trackchanges
+
+but how do we talk about making, or writing, in a landscape of economic anxiety, labor displacement, environmental devastation, and political pressures pushing for anti-intellectualism and less reading than ever?
+
+image: pivoting
+
+image: making
+
+quote: "Technology is not neutral. We're inside of what we make, and it's inside of us. We're living in a world of connections — and it matters which ones get made and unmade." - Donna Haraway
+
+I turn to the two works that inspired this title - Loveless's book on research creation and the Netflix show Carol and the End of the World
+
+image: loveless
+
+image: Carolposter
+
+Carol works processing data towards no apparent end while finding joy in an Applebees community even as the world crashes around her -
+
+image: carol
+
+image: pluribus
+
+those of us who write are perhaps in a similar place 
+
+image: thankyou
+
+

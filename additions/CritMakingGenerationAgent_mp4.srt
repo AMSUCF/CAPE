@@ -1,0 +1,2612 @@
+1
+00:00:00,000 --> 00:00:01,080
+Welcome back.
+
+2
+00:00:01,080 --> 00:00:04,360
+So this week
+I'm using a slightly different slide deck.
+
+3
+00:00:04,680 --> 00:00:07,680
+And that's because I am giving a talk
+
+4
+00:00:07,680 --> 00:00:10,560
+on the move from generation to agency.
+
+5
+00:00:10,560 --> 00:00:15,640
+I actually during spring break
+and I went a little overboard
+
+6
+00:00:15,680 --> 00:00:18,880
+on my slide deck, so given the shelf life
+
+7
+00:00:18,880 --> 00:00:23,480
+that this topic has right
+now, you get to, benefit from
+
+8
+00:00:23,480 --> 00:00:27,680
+or at least be entertained by,
+hopefully, the
+
+9
+00:00:29,160 --> 00:00:32,000
+visual structure of this as well.
+
+10
+00:00:32,000 --> 00:00:35,520
+And this slide deck
+is also an illustration
+
+11
+00:00:35,520 --> 00:00:38,880
+of one of the possible exercises
+I recommend this week.
+
+12
+00:00:39,240 --> 00:00:42,080
+So this was built using Claude Code,
+
+13
+00:00:42,080 --> 00:00:46,440
+where I had already set up
+all of the images and content.
+
+14
+00:00:46,440 --> 00:00:49,560
+And just a big text file,
+for it to reference.
+
+15
+00:00:50,080 --> 00:00:52,520
+And then, this was the output.
+
+16
+00:00:52,520 --> 00:00:53,600
+And that's one of the things
+
+17
+00:00:53,600 --> 00:00:57,200
+I'm going to be talking about in
+this is this idea of authorship.
+
+18
+00:00:59,400 --> 00:01:02,400
+And for that, we're going to.
+
+19
+00:01:03,960 --> 00:01:06,520
+begin here
+
+20
+00:01:06,520 --> 00:01:11,200
+with a little Foucault question,
+not my usual spiel.
+
+21
+00:01:11,200 --> 00:01:13,160
+So many of you
+
+22
+00:01:13,160 --> 00:01:14,880
+had me in other classes might know.
+
+23
+00:01:14,880 --> 00:01:19,080
+But I do think it's a really important
+starting point for us today
+
+24
+00:01:19,640 --> 00:01:22,440
+to think about the ways
+
+25
+00:01:22,440 --> 00:01:26,720
+that authorship has
+historically been theorized, and the extent
+
+26
+00:01:26,720 --> 00:01:30,720
+to which thinking about AI
+through the lens of authorship
+
+27
+00:01:31,080 --> 00:01:34,080
+in the context of critical making,
+is going to be.
+
+28
+00:01:36,160 --> 00:01:37,720
+A key framework for us,
+
+29
+00:01:37,720 --> 00:01:40,800
+and that is one where there is
+
+30
+00:01:40,800 --> 00:01:43,800
+the threat
+of ceding our intention and control.
+
+31
+00:01:44,040 --> 00:01:47,680
+So authorship has always been something
+kind of changing.
+
+32
+00:01:47,680 --> 00:01:51,960
+And the idea of collective authorship
+particularly has existed
+
+33
+00:01:51,960 --> 00:01:55,960
+previously to kind of
+what we're encountering with LLMs.
+
+34
+00:01:57,720 --> 00:02:00,240
+And of course, we also kind of had,
+
+35
+00:02:01,240 --> 00:02:04,240
+going back to the early,
+
+36
+00:02:04,680 --> 00:02:07,680
+finding voices in hypertext—Ted Nelson.
+
+37
+00:02:07,680 --> 00:02:10,680
+We've always also had kind of this,
+
+38
+00:02:11,480 --> 00:02:14,880
+tension over the idea of computers
+as thinking machines.
+
+39
+00:02:15,360 --> 00:02:18,200
+This is not a new experience
+
+40
+00:02:18,200 --> 00:02:21,200
+where we have a bunch of people talking
+about whether computers are conscious.
+
+41
+00:02:21,320 --> 00:02:23,360
+We've been doing that
+
+42
+00:02:23,360 --> 00:02:26,360
+since the beginning of computing.
+
+43
+00:02:27,080 --> 00:02:31,440
+So kind of those two things, the question
+of how authorship has changed
+
+44
+00:02:31,440 --> 00:02:35,000
+and the question of whether computers
+think help us think about this question
+
+45
+00:02:35,000 --> 00:02:38,840
+of whether computers can, in fact, author
+and what it means to think about
+
+46
+00:02:38,840 --> 00:02:40,760
+computers as authors.
+
+47
+00:02:40,760 --> 00:02:44,440
+And so here, of course, we've talked
+a little, already about the work of Matt
+
+48
+00:02:44,760 --> 00:02:49,080
+Kirschenbaum,
+and his framework of the textpocalypse
+
+49
+00:02:49,880 --> 00:02:53,720
+is, you know, a bit dire,
+but basically the idea is that.
+
+50
+00:02:53,720 --> 00:02:56,720
+What does it mean if AI becomes
+
+51
+00:02:57,280 --> 00:03:01,520
+one of the dominant modes
+of authoring text?
+
+52
+00:03:02,240 --> 00:03:07,680
+And that is to say, what if AI,
+instead of being trained on human writing,
+
+53
+00:03:07,680 --> 00:03:11,240
+kind of the way it is right now,
+is gradually trained more and more upon
+
+54
+00:03:11,800 --> 00:03:14,800
+other text that has come from AI.
+
+55
+00:03:15,200 --> 00:03:19,880
+And how is our relationship to writing
+and reading going to fundamentally change?
+
+56
+00:03:21,040 --> 00:03:22,440
+So one of the things that kind of
+
+57
+00:03:22,440 --> 00:03:25,560
+makes the stakes of this, particularly,
+
+58
+00:03:26,560 --> 00:03:31,280
+kind of troubling right now
+is if we actually look at the kind
+
+59
+00:03:31,280 --> 00:03:34,800
+of percentages of readership
+and the acts of reading already,
+
+60
+00:03:35,920 --> 00:03:38,920
+it's not great.
+
+61
+00:03:38,960 --> 00:03:40,320
+And that this, chart
+
+62
+00:03:40,320 --> 00:03:43,320
+here, from a 2025, study,
+
+63
+00:03:44,160 --> 00:03:49,600
+caps out at like 40% of people reading.
+
+64
+00:03:49,600 --> 00:03:52,200
+And if you're looking for academic books,
+they're right there down
+
+65
+00:03:52,200 --> 00:03:55,800
+clustered at 10%,
+just above graphic novels
+
+66
+00:03:56,560 --> 00:03:59,560
+and still beating poetry.
+
+67
+00:03:59,680 --> 00:04:01,640
+Maybe not in this class, but,
+
+68
+00:04:01,640 --> 00:04:04,640
+on the general, population.
+
+69
+00:04:05,600 --> 00:04:07,600
+And kind of with that anxiety
+
+70
+00:04:07,600 --> 00:04:10,600
+over readership also comes
+the reality that
+
+71
+00:04:11,360 --> 00:04:14,200
+most people who read
+
+72
+00:04:14,200 --> 00:04:19,200
+are a small percentage, kind of within
+the context of American adults.
+
+73
+00:04:19,720 --> 00:04:22,360
+So, those of us
+
+74
+00:04:22,360 --> 00:04:26,320
+with excessive TBR piles and particular
+
+75
+00:04:26,400 --> 00:04:31,920
+kind of attachment
+to print are in this very
+
+76
+00:04:32,880 --> 00:04:34,160
+low percentage
+
+77
+00:04:34,160 --> 00:04:37,160
+of who is actually doing reading.
+
+78
+00:04:37,800 --> 00:04:41,160
+But we have kind of this other
+interesting, moment, where.
+
+79
+00:04:41,320 --> 00:04:44,080
+Well, yeah, something is reading.
+
+80
+00:04:44,080 --> 00:04:47,400
+And this that, of course, is one of the.
+
+81
+00:04:48,200 --> 00:04:50,400
+Books3 data sets
+
+82
+00:04:50,400 --> 00:04:53,000
+that has been used to feed
+
+83
+00:04:53,000 --> 00:04:56,640
+I saw a few of my titles in there
+
+84
+00:04:56,640 --> 00:04:59,640
+and pretty much any academic
+can say the same.
+
+85
+00:05:00,640 --> 00:05:03,760
+and entertainingly,
+many of us are not eligible
+
+86
+00:05:03,760 --> 00:05:06,880
+to hop in on the lawsuits
+if we work with small publishers,
+
+87
+00:05:06,880 --> 00:05:10,280
+because they don't actually bother
+with all the copyright steps
+
+88
+00:05:10,720 --> 00:05:14,120
+that would be necessary,
+which, is sad because
+
+89
+00:05:14,120 --> 00:05:17,120
+for academic books that probably
+
+90
+00:05:17,400 --> 00:05:21,040
+would be more money than actually,
+most monographs will ever make.
+
+91
+00:05:21,880 --> 00:05:24,880
+But it's also kind of interesting because
+
+92
+00:05:26,120 --> 00:05:29,400
+I, for one, write
+academic books with the intention
+
+93
+00:05:29,480 --> 00:05:33,120
+and the hope of being read
+by whoever wants to get access to them.
+
+94
+00:05:34,160 --> 00:05:35,280
+And thus
+
+95
+00:05:35,280 --> 00:05:39,800
+the internet is no doubt
+filled with PDFs of my books already
+
+96
+00:05:40,560 --> 00:05:44,320
+that I happily share to allow people
+
+97
+00:05:44,560 --> 00:05:47,760
+to get access to those who are not working
+within an academic environment.
+
+98
+00:05:48,640 --> 00:05:51,960
+And I know many of my colleagues
+do the same with the informal networks
+
+99
+00:05:51,960 --> 00:05:55,080
+for the sharing,
+especially of academic papers
+
+100
+00:05:55,560 --> 00:05:59,560
+which exist behind paywalls that are of
+no benefit to the authors whatsoever.
+
+101
+00:06:00,840 --> 00:06:03,600
+And so there are large informal networks
+
+102
+00:06:03,600 --> 00:06:07,440
+of sharing around those materials
+historically.
+
+103
+00:06:07,920 --> 00:06:11,800
+But now there's a different reaction,
+and people are starting to get very tense
+
+104
+00:06:11,800 --> 00:06:13,560
+about this idea.
+
+105
+00:06:13,560 --> 00:06:16,880
+That AI is actually kind of consuming
+
+106
+00:06:17,880 --> 00:06:18,840
+these texts.
+
+107
+00:06:18,840 --> 00:06:22,840
+And that's actually something that I find
+really troubling because, sure,
+
+108
+00:06:22,880 --> 00:06:25,960
+there are a whole lot of problems
+with the marketing of LLMs
+
+109
+00:06:25,960 --> 00:06:28,960
+as bringing you
+human-level intelligence to that task.
+
+110
+00:06:29,400 --> 00:06:33,600
+But if we do have these systems
+on which people are starting
+
+111
+00:06:33,600 --> 00:06:36,920
+to rely upon their information, having
+
+112
+00:06:38,160 --> 00:06:41,320
+consumed dissertations and academic books,
+
+113
+00:06:41,320 --> 00:06:44,320
+particularly the ones that it was hard
+to get anyone else to read already,
+
+114
+00:06:45,280 --> 00:06:48,600
+it's not necessarily
+the worst thing for, the machines
+
+115
+00:06:49,160 --> 00:06:52,160
+that are playing
+such a role with our text.
+
+116
+00:06:52,800 --> 00:06:55,360
+And so kind of this
+brings me to the crisis of authorship
+
+117
+00:06:55,360 --> 00:06:57,160
+and the humanities and sciences,
+
+118
+00:06:57,160 --> 00:07:00,360
+kind of how I look at it
+from the perspective of someone
+
+119
+00:07:00,360 --> 00:07:04,440
+who's invested in critical making
+and digital content versus someone who's
+
+120
+00:07:04,640 --> 00:07:06,640
+particularly invested in print.
+
+121
+00:07:06,640 --> 00:07:08,400
+No, I do write for print.
+
+122
+00:07:08,400 --> 00:07:10,200
+I view it as a lark.
+
+123
+00:07:10,200 --> 00:07:13,200
+Not so much, as a
+
+124
+00:07:13,840 --> 00:07:16,840
+something that is of this time.
+
+125
+00:07:16,880 --> 00:07:18,960
+And it's worth kind of remembering
+
+126
+00:07:18,960 --> 00:07:21,960
+that in the history of my primary field,
+
+127
+00:07:21,960 --> 00:07:25,080
+electronic literature, we've been talking
+about the end of books for a long time.
+
+128
+00:07:25,560 --> 00:07:29,920
+Robert Coover wrote an article
+that caused quite a stir back in 1992.
+
+129
+00:07:30,240 --> 00:07:32,160
+Not going to talk
+about how long ago that was,
+
+130
+00:07:33,720 --> 00:07:35,400
+declaring that this, the
+
+131
+00:07:35,400 --> 00:07:38,400
+novel as we know it has come to its end
+
+132
+00:07:39,480 --> 00:07:44,560
+and Coover was writing this in reaction
+to the hypertext novel,
+
+133
+00:07:44,840 --> 00:07:49,640
+which did not turn out to be the thing
+that would displace the novel.
+
+134
+00:07:49,640 --> 00:07:51,960
+But that doesn't mean it was wrong.
+
+135
+00:07:51,960 --> 00:07:56,360
+It's not the hypertext novel,
+but indeed all of the web and digital
+
+136
+00:07:56,360 --> 00:07:57,920
+writing and interactivity
+
+137
+00:07:57,920 --> 00:08:01,760
+and the ways that other ways
+that we consume and read text
+
+138
+00:08:02,360 --> 00:08:05,800
+that have killed the novel
+novels are still there,
+
+139
+00:08:06,200 --> 00:08:11,160
+but certainly, shifted the cultural role
+of the novel and shifted where
+
+140
+00:08:11,160 --> 00:08:14,560
+people do creative writing and think about
+creative writing. Any of my folks
+
+141
+00:08:15,280 --> 00:08:19,520
+in fan studies
+or who read fanfiction online can attest.
+
+142
+00:08:19,880 --> 00:08:23,240
+You can read many, many,
+many novels worth of text.
+
+143
+00:08:24,040 --> 00:08:26,000
+In those hypertext environments.
+
+144
+00:08:27,200 --> 00:08:29,360
+So this is kind of
+
+145
+00:08:29,360 --> 00:08:34,000
+the story of what happened to authorship
+and writing from the perspective of this
+
+146
+00:08:34,520 --> 00:08:37,000
+type of technology and what I see,
+
+147
+00:08:37,000 --> 00:08:43,320
+AI particularly as a tool
+that could enter into that space
+
+148
+00:08:43,320 --> 00:08:47,120
+and change our relationship
+with the platforms on
+
+149
+00:08:47,120 --> 00:08:50,520
+which we now do most of our authorship
+and our reading.
+
+150
+00:08:52,960 --> 00:08:55,960
+And kind of,
+
+151
+00:08:57,120 --> 00:09:00,920
+One plug, really, for the fact
+that several slides of this talk are on my book.
+
+152
+00:09:00,920 --> 00:09:01,920
+Shown here.
+
+153
+00:09:01,920 --> 00:09:04,840
+But this is something
+I've been working on for a long time.
+
+154
+00:09:04,840 --> 00:09:08,520
+And my first book,
+was originally titled Magical Books
+
+155
+00:09:09,480 --> 00:09:12,400
+because I was looking at kind of
+what was happening with interactive
+
+156
+00:09:12,400 --> 00:09:15,400
+books on the iPad and all of the ways that
+
+157
+00:09:17,240 --> 00:09:19,480
+we could do things with books and books
+
+158
+00:09:19,480 --> 00:09:22,800
+is a form of
+thanks to a born digital approach that
+
+159
+00:09:23,960 --> 00:09:24,400
+quite
+
+160
+00:09:24,400 --> 00:09:27,400
+exciting and interesting and interactive.
+
+161
+00:09:28,480 --> 00:09:32,280
+My colleagues in the electronic literature
+organization told me Magical Books
+
+162
+00:09:32,280 --> 00:09:35,720
+was a terrible title, and somehow
+we ended up with what is your quest?
+
+163
+00:09:36,320 --> 00:09:40,280
+But it's, kind of a great way to connect,
+how I think about books and reading
+
+164
+00:09:40,280 --> 00:09:44,200
+with interactive fiction, adventure games
+and all these sorts of playful forms
+
+165
+00:09:44,200 --> 00:09:47,200
+that you've especially been working with
+over the last few weeks.
+
+166
+00:09:50,080 --> 00:09:52,080
+So when we kind of think about,
+
+167
+00:09:52,080 --> 00:09:55,080
+those forms in relationship
+to things like the iPad.
+
+168
+00:09:56,560 --> 00:09:59,160
+Yeah, for a moment at least,
+
+169
+00:09:59,160 --> 00:10:02,440
+there was this real kind of excitement
+about the iPad as something
+
+170
+00:10:02,440 --> 00:10:05,680
+that people who do creative work
+could build applications for,
+
+171
+00:10:06,000 --> 00:10:10,200
+and it turned out to be,
+just really depressingly wrong.
+
+172
+00:10:10,840 --> 00:10:13,280
+But it wasn't
+because this idea of a tablet
+
+173
+00:10:13,280 --> 00:10:16,280
+on which we have all these different
+media experiences was an interesting.
+
+174
+00:10:16,560 --> 00:10:21,680
+That was because of the Apple App Store
+and the ways that they drove, individual
+
+175
+00:10:21,680 --> 00:10:24,680
+creative out with expensive fees,
+
+176
+00:10:25,040 --> 00:10:27,920
+and demands of constantly
+rebuilding their applications
+
+177
+00:10:27,920 --> 00:10:31,080
+for the latest devices,
+all of the kind of most interesting
+
+178
+00:10:31,080 --> 00:10:34,280
+and experimental work
+that happened on the iPad
+
+179
+00:10:35,440 --> 00:10:36,560
+pretty much vanished.
+
+180
+00:10:36,560 --> 00:10:39,920
+And almost
+nothing is playable or recoverable. Now.
+
+181
+00:10:40,720 --> 00:10:44,280
+But some of the things that people
+are starting to emulate,
+
+182
+00:10:45,040 --> 00:10:48,200
+with the help of AI—a story
+we'll return to.
+
+183
+00:10:50,640 --> 00:10:53,640
+So kind of this kind of takes me back to,
+
+184
+00:10:54,640 --> 00:10:59,000
+these other genres of narratives
+and the ways they can stay,
+
+185
+00:10:59,000 --> 00:11:03,480
+and usually not by corporations,
+but by people outside of those platforms.
+
+186
+00:11:03,720 --> 00:11:07,520
+So things like Day of the Tentacle,
+my personal favorite game,
+
+187
+00:11:07,880 --> 00:11:10,880
+and kind of these classic graphic
+adventure games that
+
+188
+00:11:11,920 --> 00:11:15,280
+inspired the folks working
+in things like Bitsy and Twine
+
+189
+00:11:16,040 --> 00:11:19,120
+are often, many of them, in fact,
+
+190
+00:11:19,120 --> 00:11:22,840
+get rendered unplayable
+or require substantial work and emulation.
+
+191
+00:11:22,960 --> 00:11:27,400
+Again, that is done by open source
+communities and people who care
+
+192
+00:11:27,880 --> 00:11:30,880
+about still being able
+to read and play those works.
+
+193
+00:11:31,200 --> 00:11:34,200
+And these eras
+have a number of kind of amazing
+
+194
+00:11:34,560 --> 00:11:38,320
+examples of authors
+working with teams of collaborators
+
+195
+00:11:38,320 --> 00:11:43,040
+on digital projects, telling, stories
+that are kind of
+
+196
+00:11:43,080 --> 00:11:47,200
+just as important as any novel,
+like Jane Jensen's Gabriel Knight series.
+
+197
+00:11:48,080 --> 00:11:52,960
+Which, if you haven't played,
+I just so highly recommend.
+
+198
+00:11:54,680 --> 00:11:55,120
+And of
+
+199
+00:11:55,120 --> 00:11:58,320
+course it exists, and a remastered
+version, in large part
+
+200
+00:11:58,320 --> 00:12:02,480
+because it has such a fandom
+that people who still want it to exist,
+
+201
+00:12:03,400 --> 00:12:06,400
+doing that work of thinking about
+
+202
+00:12:06,880 --> 00:12:09,880
+digital preservation and
+
+203
+00:12:10,560 --> 00:12:13,200
+emulation.
+
+204
+00:12:13,200 --> 00:12:15,920
+So one of the platforms,
+that's a little too complicated.
+
+205
+00:12:15,920 --> 00:12:19,560
+So we didn't feature it here
+in critical making course.
+
+206
+00:12:19,560 --> 00:12:23,680
+Adventure Games Studio is like,
+what some of you, kind of were describing,
+
+207
+00:12:23,720 --> 00:12:28,440
+which Bitsy was inspired
+by—all of those sorts of games.
+
+208
+00:12:28,440 --> 00:12:33,800
+and it was created
+as a tool in the same modality as what
+
+209
+00:12:33,800 --> 00:12:38,240
+we've been working with, where the goal
+was to allow people to focus on the story
+
+210
+00:12:39,160 --> 00:12:42,560
+rather than the code
+rather than the software.
+
+211
+00:12:43,240 --> 00:12:45,680
+And this is a tool that has enabled
+
+212
+00:12:45,680 --> 00:12:48,560
+just thousands of,
+
+213
+00:12:49,760 --> 00:12:51,880
+games
+
+214
+00:12:51,880 --> 00:12:54,200
+and experiments and one room
+
+215
+00:12:54,200 --> 00:12:57,200
+games and personal projects
+that no one else has ever seen.
+
+216
+00:12:57,200 --> 00:13:01,640
+And what, all sorts of really
+
+217
+00:13:02,240 --> 00:13:05,240
+open, experimental authored works
+
+218
+00:13:05,320 --> 00:13:08,320
+that are just, fascinating and weird.
+
+219
+00:13:09,440 --> 00:13:11,880
+And AGS has never cost money.
+
+220
+00:13:11,880 --> 00:13:14,800
+It's always been a community
+sustained tool.
+
+221
+00:13:14,800 --> 00:13:17,360
+And as a result, adventure game
+
+222
+00:13:17,360 --> 00:13:20,360
+Studio still lives now.
+
+223
+00:13:20,360 --> 00:13:23,440
+Even though I was writing about it
+initially in my,
+
+224
+00:13:26,840 --> 00:13:29,840
+Just my own dissertation. So,
+
+225
+00:13:30,800 --> 00:13:33,520
+but that's not the case
+for a lot of these types of tools.
+
+226
+00:13:33,520 --> 00:13:36,280
+Once upon a time,
+if you took a course like this,
+
+227
+00:13:36,280 --> 00:13:41,000
+that was about kind of critical making,
+those sorts of things, he would almost
+
+228
+00:13:41,000 --> 00:13:44,400
+certainly have been using Flash.
+In my graduate program,
+
+229
+00:13:44,680 --> 00:13:48,560
+a lot of what was doing very
+similar things was taught with Flash.
+
+230
+00:13:49,680 --> 00:13:52,680
+But flash did not work out so well.
+
+231
+00:13:55,240 --> 00:13:58,920
+In its heyday,
+it was amazing and messy,
+
+232
+00:13:58,920 --> 00:14:02,440
+and the features over time
+were just a complete disaster.
+
+233
+00:14:02,440 --> 00:14:04,200
+And it tried to be too many things, right?
+
+234
+00:14:04,200 --> 00:14:07,640
+Like all of the different types
+of digital projects we've done in this
+
+235
+00:14:07,640 --> 00:14:10,680
+class, could have been done with
+flash, would have been back in the day.
+
+236
+00:14:10,920 --> 00:14:14,680
+But of course, it also as a result,
+it had lots of security holes
+
+237
+00:14:14,680 --> 00:14:17,680
+that allowed for, Apple
+
+238
+00:14:17,680 --> 00:14:21,080
+going back to the story of the iPad
+and the their interest
+
+239
+00:14:21,080 --> 00:14:25,480
+in eliminating competition and eliminating
+free authorship on their platform,
+
+240
+00:14:25,480 --> 00:14:27,640
+and making sure that they profited off
+
+241
+00:14:27,640 --> 00:14:30,640
+of everything playable and interesting
+that was on the App Store.
+
+242
+00:14:31,600 --> 00:14:34,600
+They refused to support flash.
+
+243
+00:14:34,840 --> 00:14:38,160
+So we have this story,
+and this is just one example of it
+
+244
+00:14:38,160 --> 00:14:40,080
+that's really critical to the history,
+
+245
+00:14:40,080 --> 00:14:43,400
+like digital media, electronic
+literature, games, and all sorts
+
+246
+00:14:43,400 --> 00:14:47,080
+of weird things on the web that died
+and had to be slowly resurrected.
+
+247
+00:14:47,240 --> 00:14:51,480
+We've lost so much playable history,
+we've lost libraries worth
+
+248
+00:14:52,320 --> 00:14:54,480
+of animations
+
+249
+00:14:54,480 --> 00:14:58,480
+and games and experiences
+and weird things as a result
+
+250
+00:14:58,480 --> 00:15:02,360
+of a proprietary platform
+killing another proprietary platform.
+
+251
+00:15:04,680 --> 00:15:07,240
+And, one of the
+
+252
+00:15:07,240 --> 00:15:12,080
+people who—just incredible Flash
+and digital artists, generally—on the left,
+
+253
+00:15:12,080 --> 00:15:15,080
+who was looking back at the death,
+said, you know,
+
+254
+00:15:15,080 --> 00:15:18,200
+we really have to think about the things
+we've learned from it,
+
+255
+00:15:18,200 --> 00:15:24,000
+about how little it takes
+to destroy a technology
+
+256
+00:15:24,000 --> 00:15:28,600
+that enables a wide number of people
+to do creative, meaningful digital work.
+
+257
+00:15:29,360 --> 00:15:31,880
+And in that destruction, eradicate
+
+258
+00:15:31,880 --> 00:15:34,880
+a huge portion of digital history.
+
+259
+00:15:37,520 --> 00:15:39,720
+And while efforts like the
+
+260
+00:15:39,720 --> 00:15:43,200
+Ruffle project and the Internet Archive's
+Flash preservation are
+
+261
+00:15:44,240 --> 00:15:44,880
+incredible.
+
+262
+00:15:44,880 --> 00:15:48,720
+They're also a labor intensive,
+and they would not have been necessary
+
+263
+00:15:49,080 --> 00:15:53,520
+if we weren't so invested in making
+with proprietary systems to begin with.
+
+264
+00:15:54,520 --> 00:15:57,560
+So whenever you're working with
+something like Twine and Bitsy,
+
+265
+00:15:57,600 --> 00:16:01,680
+you'll notice that the source code
+everything is, open web technologies.
+
+266
+00:16:01,680 --> 00:16:04,680
+There's nothing behind any weird wall.
+
+267
+00:16:05,320 --> 00:16:07,600
+There's nothing that you can't read.
+
+268
+00:16:07,600 --> 00:16:11,320
+There's nothing that, can't be sustained.
+
+269
+00:16:11,320 --> 00:16:15,160
+Even if the twine editor stopped working,
+you would still be able
+
+270
+00:16:15,160 --> 00:16:16,560
+to edit your twine games.
+
+271
+00:16:16,560 --> 00:16:20,760
+And that's something that I put
+at the forefront whenever I'm teaching
+
+272
+00:16:20,760 --> 00:16:22,720
+critical making, because we're not just
+
+273
+00:16:23,680 --> 00:16:25,000
+concerned about whether it's
+
+274
+00:16:25,000 --> 00:16:27,880
+the platform is free
+as in no cost,
+
+275
+00:16:27,880 --> 00:16:31,080
+but whether it's free
+in terms of its code.
+
+276
+00:16:34,360 --> 00:16:37,000
+So what does that have to do
+with authorship?
+
+277
+00:16:37,000 --> 00:16:40,640
+Well, here I turn again to that question.
+
+278
+00:16:40,640 --> 00:16:44,040
+Kirschenbaum—the consequence of having
+
+279
+00:16:44,800 --> 00:16:47,680
+an undergraduate student back in the day,
+
+280
+00:16:47,680 --> 00:16:50,040
+and his book track Changes
+
+281
+00:16:50,040 --> 00:16:53,040
+A Literary History of Word Processing,
+
+282
+00:16:53,320 --> 00:16:56,960
+which is kind of really a chronicle
+
+283
+00:16:56,960 --> 00:16:59,960
+of how Coover was right.
+
+284
+00:17:00,080 --> 00:17:05,520
+The novel was changing
+fundamentally, not dead, but certainly
+
+285
+00:17:06,040 --> 00:17:07,440
+fundamentally reshaped
+
+286
+00:17:07,440 --> 00:17:11,480
+by the word processor and by the changing
+nature of the word processor.
+
+287
+00:17:11,480 --> 00:17:13,480
+And it's
+
+288
+00:17:13,480 --> 00:17:16,480
+and the word processor, it's
+also a piece of software.
+
+289
+00:17:17,160 --> 00:17:21,160
+And in many ways, it's
+a great example of one of these
+
+290
+00:17:21,280 --> 00:17:25,240
+kind of free pieces of software
+in terms of its output,
+
+291
+00:17:25,240 --> 00:17:28,600
+if not its actual price, especially
+if you're using Microsoft Office.
+
+292
+00:17:29,640 --> 00:17:32,080
+But ultimately, the
+
+293
+00:17:32,080 --> 00:17:35,120
+output of what you do in a word
+processor is text.
+
+294
+00:17:35,920 --> 00:17:39,400
+And that text has been changed
+fundamentally by the affordances
+
+295
+00:17:39,400 --> 00:17:42,400
+and how a word processor works.
+
+296
+00:17:43,720 --> 00:17:44,640
+And when we kind of
+
+297
+00:17:44,640 --> 00:17:50,040
+think about something like word perfect
+and this idea of word
+
+298
+00:17:50,040 --> 00:17:54,280
+processing
+as allowing for the perfect draft,
+
+299
+00:17:55,320 --> 00:18:00,120
+I think you can hear the echoes
+from this 1983 advertisement.
+
+300
+00:18:00,320 --> 00:18:04,080
+With a word processing system, you can
+actually produce a perfect document.
+
+301
+00:18:06,040 --> 00:18:09,040
+And we're hearing that now again,
+
+302
+00:18:10,240 --> 00:18:12,600
+the new word processors—
+
+303
+00:18:12,600 --> 00:18:16,360
+are also promising us a perfect document.
+
+304
+00:18:22,160 --> 00:18:23,640
+Kind of we've talked
+
+305
+00:18:23,640 --> 00:18:26,400
+a lot about twine, kind of going back.
+
+306
+00:18:26,400 --> 00:18:26,920
+Yeah.
+
+307
+00:18:26,920 --> 00:18:30,960
+To what Coover imagined
+would kill the novel.
+
+308
+00:18:31,800 --> 00:18:35,440
+And, of course, twine
+and this idea of hypertext,
+
+309
+00:18:36,080 --> 00:18:39,080
+are also, in many ways, word processors.
+
+310
+00:18:39,320 --> 00:18:42,680
+They're tools that are software programs
+
+311
+00:18:43,000 --> 00:18:46,600
+with a different set of affordances
+for hypertext authoring.
+
+312
+00:18:46,600 --> 00:18:50,760
+And instead of trying to produce it,
+just text to be printed.
+
+313
+00:18:50,760 --> 00:18:52,360
+They're trying to build something,
+
+314
+00:18:53,440 --> 00:18:56,360
+that.
+
+315
+00:18:56,360 --> 00:18:59,520
+Is designed
+to continue to live on devices.
+
+316
+00:19:01,560 --> 00:19:02,760
+And when we think
+
+317
+00:19:02,760 --> 00:19:07,040
+about what twine has allowed,
+we got kind of all of these
+
+318
+00:19:07,040 --> 00:19:11,000
+experimental works
+and things from people who were frankly,
+
+319
+00:19:11,600 --> 00:19:16,080
+not at that time likely to be published
+within the traditional game design
+
+320
+00:19:16,080 --> 00:19:20,080
+establishment or necessarily like the kind
+of traditional spaces of literature.
+
+321
+00:19:21,720 --> 00:19:26,400
+So this type of word processor,
+as it were,
+
+322
+00:19:26,400 --> 00:19:32,480
+offered a bit of a democratization
+of who could make important
+
+323
+00:19:32,480 --> 00:19:35,760
+playable things
+that other people would read,
+
+324
+00:19:37,560 --> 00:19:39,680
+even if they are not to return
+
+325
+00:19:39,680 --> 00:19:42,680
+to our opening necessarily reading novels
+
+326
+00:19:43,400 --> 00:19:44,800
+and adventure games
+
+327
+00:19:44,800 --> 00:19:49,400
+and all these genres that I tend to talk
+about really forward in those categories
+
+328
+00:19:49,400 --> 00:19:54,720
+and what's kind of so critical
+about them compared to some of the more
+
+329
+00:19:54,720 --> 00:19:59,520
+mainstream game categories,
+is that because there's no real action
+
+330
+00:20:00,000 --> 00:20:03,480
+and there's nothing that a serious game
+
+331
+00:20:03,480 --> 00:20:07,160
+engine or 3D world offers,
+
+332
+00:20:07,160 --> 00:20:10,520
+They've always been less expensive,
+and as such,
+
+333
+00:20:10,840 --> 00:20:15,320
+they've always been spaces
+where I tend to see more experimental
+
+334
+00:20:15,320 --> 00:20:19,800
+and interesting experiment
+with what I call procedural authorship.
+
+335
+00:20:20,400 --> 00:20:25,000
+So the authoring of systems
+that have rules and stories together.
+
+336
+00:20:26,080 --> 00:20:27,240
+Kentucky Route zero.
+
+337
+00:20:27,240 --> 00:20:31,280
+If you were taking my section of Platforms,
+we would have to play
+
+338
+00:20:31,280 --> 00:20:35,280
+This, is one kind of perfect
+example of that
+
+339
+00:20:35,720 --> 00:20:40,120
+that also has within it a story of workers
+being displaced by machines.
+
+340
+00:20:40,120 --> 00:20:44,240
+You run into,
+someone working at the Echo River
+
+341
+00:20:44,280 --> 00:20:47,840
+Central Exchange
+who's the last human employee
+
+342
+00:20:48,560 --> 00:20:53,160
+And what used to be a major,
+phone exchange and is now
+
+343
+00:20:53,160 --> 00:20:56,960
+just a supervisor of the machines
+that have replaced all of her colleagues.
+
+344
+00:20:57,400 --> 00:21:00,160
+It's kind of the perfect
+
+345
+00:21:00,160 --> 00:21:01,360
+labor.
+
+346
+00:21:01,360 --> 00:21:02,720
+Metaphor.
+
+347
+00:21:02,720 --> 00:21:05,720
+What if there's no cheap machine
+that's going to replace me?
+
+348
+00:21:05,960 --> 00:21:08,760
+What if it's cheaper
+just to keep me here filling in
+
+349
+00:21:08,760 --> 00:21:10,240
+for the resume of the operators?
+
+350
+00:21:10,240 --> 00:21:13,240
+What if I'm the cheap machine?
+
+351
+00:21:15,520 --> 00:21:18,680
+And and if this ability
+
+352
+00:21:19,400 --> 00:21:22,400
+of text authored on machines
+
+353
+00:21:22,640 --> 00:21:24,960
+in the context of,
+
+354
+00:21:24,960 --> 00:21:27,960
+in this case,
+a narrative that is very twine esque,
+
+355
+00:21:28,480 --> 00:21:32,040
+though illustrated and beautifully
+orchestrated, a bit beyond that,
+
+356
+00:21:33,480 --> 00:21:35,880
+and it becomes a place
+
+357
+00:21:35,880 --> 00:21:40,040
+for asking these questions on becomes
+just as critical, as a novel
+
+358
+00:21:40,040 --> 00:21:43,960
+for expressing this type of authorship,
+for making us think about
+
+359
+00:21:44,840 --> 00:21:48,760
+how these types of simple,
+accessible tools and genres,
+
+360
+00:21:49,520 --> 00:21:52,400
+play a role alongside everything else
+
+361
+00:21:52,400 --> 00:21:56,080
+that we read and experience
+
+362
+00:21:56,680 --> 00:21:59,120
+That games like—and
+
+363
+00:21:59,120 --> 00:21:59,680
+another one,
+
+364
+00:21:59,680 --> 00:22:03,760
+you would not be able to escape
+if you play it—Undertale,
+
+365
+00:22:04,520 --> 00:22:09,200
+that was built almost entirely
+by one person, by using a free game tool
+
+366
+00:22:09,440 --> 00:22:12,440
+with a lot in common
+with the adventure Game studio,
+
+367
+00:22:13,000 --> 00:22:15,480
+similarly, has resonated,
+
+368
+00:22:15,480 --> 00:22:19,440
+in such a way that it just made
+people change how they played other games.
+
+369
+00:22:20,080 --> 00:22:23,080
+It has been gifted to a pope, and,
+
+370
+00:22:24,120 --> 00:22:28,680
+kind of held up
+as a cultural example of what
+
+371
+00:22:30,000 --> 00:22:32,000
+critical making
+
+372
+00:22:32,000 --> 00:22:34,040
+at its most expressive
+
+373
+00:22:34,040 --> 00:22:37,800
+and unusual and subversive might bring,
+
+374
+00:22:38,320 --> 00:22:41,120
+not just as a single game experience,
+but to how people think
+
+375
+00:22:41,120 --> 00:22:44,120
+about entire genres.
+
+376
+00:22:45,960 --> 00:22:48,960
+And, these sorts of pieces,
+
+377
+00:22:49,960 --> 00:22:54,080
+that have been enabled
+by previous generations of low code tools
+
+378
+00:22:54,080 --> 00:22:57,920
+and the types of tools
+that exist outside of highly proprietary,
+
+379
+00:22:59,120 --> 00:23:01,840
+environments and structures,
+
+380
+00:23:01,840 --> 00:23:04,840
+like the ones we use in critical making,
+
+381
+00:23:05,120 --> 00:23:09,080
+speak to the importance of democratizing
+procedural authorship and access
+
+382
+00:23:09,200 --> 00:23:12,200
+to the tools of code.
+
+383
+00:23:14,200 --> 00:23:18,320
+And that kind of brings us
+to kind of the end of the world,
+
+384
+00:23:18,480 --> 00:23:23,160
+where this idea that we're standing
+on the ruins of lots of platforms,
+
+385
+00:23:23,160 --> 00:23:27,360
+we're standing amidst
+the pieces of flash, and we're watching
+
+386
+00:23:28,480 --> 00:23:32,520
+AI play a role in further ruining
+
+387
+00:23:32,520 --> 00:23:36,240
+platforms. Kirschenbaum's point
+
+388
+00:23:36,280 --> 00:23:41,080
+that we are surrounded by the broken
+kind of world of text,
+
+389
+00:23:41,080 --> 00:23:45,920
+and the consequences that texts from
+the internet are not as scalable
+
+390
+00:23:46,880 --> 00:23:48,920
+and, of course, kind of
+
+391
+00:23:48,920 --> 00:23:53,080
+just as, our readings this week
+from Design Justice and Artificial Journal,
+
+392
+00:23:53,080 --> 00:23:56,160
+our readings from Safiya
+Noble have reminded us,
+
+393
+00:23:56,160 --> 00:23:59,880
+we are constantly dealing with the fact
+that these platforms
+
+394
+00:23:59,880 --> 00:24:05,760
+that we're working with have been informed
+by continual amplification
+
+395
+00:24:05,760 --> 00:24:08,760
+of social bias and the toxicity.
+
+396
+00:24:09,280 --> 00:24:12,280
+that these culture wars are nothing new.
+
+397
+00:24:13,320 --> 00:24:15,720
+And of course, that
+
+398
+00:24:15,720 --> 00:24:18,760
+as technology
+and extremism have become further entwined
+
+399
+00:24:18,760 --> 00:24:22,000
+and very much that kind of conversation
+in the public sphere,
+
+400
+00:24:23,080 --> 00:24:25,480
+with,
+
+401
+00:24:25,480 --> 00:24:29,280
+Palantir's, CEO throwing in, lovely,
+
+402
+00:24:30,560 --> 00:24:34,440
+quote this week about exactly who he hopes
+AI disempowers.
+
+403
+00:24:34,840 --> 00:24:37,760
+We are certainly in a moment
+where to talk about
+
+404
+00:24:37,760 --> 00:24:40,840
+AI and the democratization
+of procedural authorship.
+
+405
+00:24:40,840 --> 00:24:43,840
+Sounds probably pretty contrary.
+
+406
+00:24:44,160 --> 00:24:47,160
+And, you know, I,
+
+407
+00:24:47,560 --> 00:24:52,040
+I struggle with this myself, teaching
+critical making, bringing tech—
+
+408
+00:24:52,080 --> 00:24:55,640
+AI kind of into this conversation
+for the next few weeks,
+
+409
+00:24:56,320 --> 00:24:58,320
+instead of just saying, you should
+
+410
+00:25:00,200 --> 00:25:01,600
+author everything yourself.
+
+411
+00:25:01,600 --> 00:25:03,800
+So this is why.
+
+412
+00:25:03,800 --> 00:25:06,920
+Well, because historically,
+every platform and tool
+
+413
+00:25:06,920 --> 00:25:10,800
+that has tried to enable greater
+freedom of authorship and play has tried
+
+414
+00:25:10,800 --> 00:25:14,760
+to accomplish a lot of the things
+that agentic AI is now doing.
+
+415
+00:25:16,280 --> 00:25:20,840
+And as we're trying to think about
+how we're doing, making and writing
+
+416
+00:25:20,840 --> 00:25:25,120
+right now in the context,
+all of these pressures,
+
+417
+00:25:26,160 --> 00:25:30,400
+there's also the reality
+that to reach our students,
+
+418
+00:25:30,400 --> 00:25:33,400
+and, a larger audience,
+
+419
+00:25:34,480 --> 00:25:38,160
+just writing more text
+probably isn't going to cut it.
+
+420
+00:25:38,360 --> 00:25:42,400
+Critical making is, in part about thinking
+about the things we might make
+
+421
+00:25:42,400 --> 00:25:44,640
+that teach us something
+through the process,
+
+422
+00:25:44,640 --> 00:25:47,640
+but also about the ways
+that we might reach out
+
+423
+00:25:47,920 --> 00:25:52,440
+and kind of confront some of the pushes
+of anti-intellectualism that are very
+
+424
+00:25:53,680 --> 00:25:56,520
+much acting
+against the types of discipline,
+
+425
+00:25:56,520 --> 00:25:59,520
+the type of work we do in this class.
+
+426
+00:26:00,520 --> 00:26:03,840
+So this whole kind of, force,
+
+427
+00:26:05,000 --> 00:26:08,800
+which—and the original ethos of critical
+making on the edge of AI—came out
+
+428
+00:26:08,800 --> 00:26:13,120
+before the type of agentic workflow
+that produced this slide deck
+
+429
+00:26:13,120 --> 00:26:16,120
+That was even a possibility.
+
+430
+00:26:16,400 --> 00:26:17,080
+Right.
+
+431
+00:26:17,080 --> 00:26:20,520
+But we are kind of continually having
+
+432
+00:26:20,520 --> 00:26:24,920
+to rethink these decisions
+about what we write, how we write it,
+
+433
+00:26:25,240 --> 00:26:27,960
+and why it matters, that we choose
+
+434
+00:26:27,960 --> 00:26:30,960
+to create something in a certain form
+
+435
+00:26:31,800 --> 00:26:35,280
+rather than, kind of to choose
+
+436
+00:26:35,280 --> 00:26:39,040
+not to use, the technology
+to these same intentions.
+
+437
+00:26:42,640 --> 00:26:45,640
+And so, here at,
+
+438
+00:26:46,080 --> 00:26:48,720
+I want to mention the fact that,
+of course,
+
+439
+00:26:48,720 --> 00:26:51,720
+we are in a moment in which
+
+440
+00:26:52,080 --> 00:26:55,600
+the idea of learning, in particular,
+
+441
+00:26:56,520 --> 00:26:59,600
+feels like it's at a point of crisis,
+
+442
+00:26:59,800 --> 00:27:02,800
+things like the Einstein AI tool,
+
+443
+00:27:02,800 --> 00:27:07,160
+that promises to watch these lectures
+and write essays that I mentioned before.
+
+444
+00:27:07,160 --> 00:27:11,600
+I think all of these types
+of particularly powerful agents,
+
+445
+00:27:13,520 --> 00:27:14,920
+because they are
+
+446
+00:27:14,920 --> 00:27:17,480
+designed to reach out and have access
+
+447
+00:27:17,480 --> 00:27:20,480
+to all sorts of systems and information,
+
+448
+00:27:21,800 --> 00:27:26,960
+can can lead to a sense of fatigue
+that is completely understandable
+
+449
+00:27:27,200 --> 00:27:30,520
+among those of us
+who work, in the humanities
+
+450
+00:27:30,520 --> 00:27:34,080
+or anyone who just has to read stuff
+people write for a living.
+
+451
+00:27:34,800 --> 00:27:39,200
+And of course, SNL just made a fantastic
+
+452
+00:27:39,280 --> 00:27:42,280
+joke about this,
+
+453
+00:27:42,560 --> 00:27:45,560
+last week, kind of suggesting that,
+
+454
+00:27:46,360 --> 00:27:49,360
+the world of knitting artisanal socks
+
+455
+00:27:49,360 --> 00:27:53,160
+might have more future viability
+than the world of code.
+
+456
+00:27:54,360 --> 00:27:57,360
+But what I would say kind of,
+
+457
+00:27:58,080 --> 00:28:01,560
+we're experiencing
+and exploring here is the ways
+
+458
+00:28:01,560 --> 00:28:05,160
+in which the human touch
+is still possible and procedural.
+
+459
+00:28:05,720 --> 00:28:09,840
+So we have to think very hard
+about how we work
+
+460
+00:28:09,840 --> 00:28:14,360
+with these new writing tools
+in order to say, Frontex.
+
+461
+00:28:14,640 --> 00:28:17,280
+Nancy, it's good idea
+this practice, because that screenshot
+
+462
+00:28:17,280 --> 00:28:21,520
+is totally unreadable,
+but it is from, the new Grammarly.
+
+463
+00:28:21,960 --> 00:28:26,440
+Misadventures, that played out over
+the last few weeks where Grammarly is now
+
+464
+00:28:27,080 --> 00:28:30,560
+first offered and then quickly removed
+a feature called Expert Review.
+
+465
+00:28:30,960 --> 00:28:33,760
+Which you can't see it,
+but here has a whole bunch of them
+
+466
+00:28:33,760 --> 00:28:36,760
+scholars offering really meaningless,
+
+467
+00:28:37,800 --> 00:28:38,200
+pseudo
+
+468
+00:28:38,200 --> 00:28:42,040
+feedback, none of whom have been consulted
+or, actually
+
+469
+00:28:42,760 --> 00:28:45,760
+approved their appearance here as experts
+
+470
+00:28:46,360 --> 00:28:49,160
+and kind of this sort of AI,
+
+471
+00:28:49,160 --> 00:28:53,200
+this push is absolutely
+
+472
+00:28:53,200 --> 00:28:56,200
+trying to destroy any meaningful
+
+473
+00:28:56,560 --> 00:29:00,160
+future for authorship. So.
+
+474
+00:29:02,240 --> 00:29:06,960
+When we kind of have alongside
+kind of these
+
+475
+00:29:08,320 --> 00:29:11,760
+potentially really interesting low code
+applications, these admittedly
+
+476
+00:29:11,800 --> 00:29:16,200
+very disturbing, examples of machines that
+
+477
+00:29:17,760 --> 00:29:22,640
+are designed to steal authorship
+that is troubling us here.
+
+478
+00:29:22,640 --> 00:29:26,160
+We, of course, have generated—with
+Twine and AI and a banana—
+
+479
+00:29:26,800 --> 00:29:29,800
+a bad joke about distant reading
+
+480
+00:29:30,120 --> 00:29:33,120
+that has slightly too many Calvins
+
+481
+00:29:34,160 --> 00:29:36,640
+in the dynamic,
+
+482
+00:29:36,640 --> 00:29:39,720
+but otherwise it turned out
+pretty passable. À la
+
+483
+00:29:39,720 --> 00:29:43,280
+Watterson, much no doubt to his dismay
+
+484
+00:29:43,280 --> 00:29:46,280
+were he here to see it.
+
+485
+00:29:47,280 --> 00:29:49,320
+And so
+
+486
+00:29:49,320 --> 00:29:53,360
+your challenge in this week's exercise,
+and in the weeks that follow,
+
+487
+00:29:53,360 --> 00:29:57,760
+is going to be to think about
+whether there is a way to use agents
+
+488
+00:29:58,720 --> 00:30:01,040
+that return to how
+
+489
+00:30:01,040 --> 00:30:04,800
+kind of build on this notion
+of a historical collective authorship
+
+490
+00:30:04,800 --> 00:30:08,400
+that have embedded in them not so much
+a textual tradition as an oral tradition,
+
+491
+00:30:09,040 --> 00:30:13,320
+that have indeed consumed,
+if not always necessarily understood,
+
+492
+00:30:13,320 --> 00:30:16,360
+a vast number of academic monographs
+and papers
+
+493
+00:30:17,120 --> 00:30:20,520
+to bring that into your process in ways
+
+494
+00:30:20,640 --> 00:30:23,640
+that allow you to realize your intention
+
+495
+00:30:25,080 --> 00:30:28,080
+to keep control of the author function
+
+496
+00:30:28,160 --> 00:30:32,640
+even, well, using
+kind of some assistance in that process.
+
+497
+00:30:33,640 --> 00:30:35,680
+And on this part, kind of,
+
+498
+00:30:35,680 --> 00:30:38,800
+how Claude works, I'll be showing you
+
+499
+00:30:38,800 --> 00:30:41,800
+in more detail in the exercise video
+accompanying this.
+
+500
+00:30:42,680 --> 00:30:48,240
+But as you're kind of thinking about this
+next stage when I'll be asking you to do
+
+501
+00:30:48,240 --> 00:30:52,360
+is something
+kind of like what produced this here.
+
+502
+00:30:54,440 --> 00:30:57,440
+This is absolutely silly.
+
+503
+00:31:00,720 --> 00:31:02,720
+And it has been so much fun.
+
+504
+00:31:02,720 --> 00:31:05,720
+May or may not come through here,
+honestly.
+
+505
+00:31:05,800 --> 00:31:07,000
+But it's an example.
+
+506
+00:31:07,000 --> 00:31:10,000
+A fully prompted digital electronic
+
+507
+00:31:10,040 --> 00:31:13,040
+literature remix.
+
+508
+00:31:13,920 --> 00:31:16,920
+The author function.
+
+509
+00:31:20,400 --> 00:31:23,400
+With my little.
+
+510
+00:31:23,880 --> 00:31:25,800
+Author alter ego there.
+
+511
+00:31:25,800 --> 00:31:28,800
+But just for.
+
+512
+00:31:29,760 --> 00:31:32,760
+Humor.
+
+513
+00:31:35,320 --> 00:31:38,840
+I won't bring you
+through this whole thing, but that's this
+
+514
+00:31:40,800 --> 00:31:44,040
+type of piece, that's trying to imitate
+
+515
+00:31:45,000 --> 00:31:48,120
+some very specific classic,
+poetry authors.
+
+516
+00:31:51,800 --> 00:31:54,800
+And, in doing so.
+
+517
+00:31:57,000 --> 00:31:58,880
+That's you can kind of
+
+518
+00:31:58,880 --> 00:32:01,120
+think about
+
+519
+00:32:01,120 --> 00:32:04,120
+who wrote it.
+
+520
+00:32:04,520 --> 00:32:05,880
+So we're going to be,
+
+521
+00:32:05,880 --> 00:32:08,880
+doing this with one level of agency.
+
+522
+00:32:08,880 --> 00:32:12,440
+So you're going to be working with
+Claude for Web
+
+523
+00:32:13,000 --> 00:32:16,600
+this week
+if you are willing to pay the $20.
+
+524
+00:32:16,600 --> 00:32:21,040
+But, to experience
+and I really encourage you to do so
+
+525
+00:32:21,440 --> 00:32:24,160
+because it's a safe way to try
+
+526
+00:32:24,160 --> 00:32:28,840
+the type of thing
+that is, in much less secure ways,
+
+527
+00:32:30,920 --> 00:32:32,720
+Becoming a
+
+528
+00:32:32,720 --> 00:32:35,040
+part of kind of this, let's say,
+
+529
+00:32:35,040 --> 00:32:38,040
+the next generation of these programs.
+
+530
+00:32:39,520 --> 00:32:41,160
+OpenAI, in particular,
+
+531
+00:32:41,160 --> 00:32:46,120
+is a tool for releasing a type of agent
+
+532
+00:32:46,400 --> 00:32:51,800
+that has an alarming amount of access
+to different projects.
+
+533
+00:32:51,800 --> 00:32:55,120
+And, of course,
+one of the things that OpenAI
+
+534
+00:32:55,880 --> 00:32:58,440
+kind of is showcased in
+is this thing called Notebook LM,
+
+535
+00:32:58,440 --> 00:33:02,360
+which, in a very strange
+turn, was just purchased by Meta.
+
+536
+00:33:02,720 --> 00:33:07,560
+It's an agent-only social network
+with lots of precursors
+
+537
+00:33:07,560 --> 00:33:10,560
+and electronic literature,
+like the types of bots that you've made,
+
+538
+00:33:10,840 --> 00:33:14,280
+the types of bots
+that are not kind of
+
+539
+00:33:15,560 --> 00:33:18,240
+LLMs but instead poetic experiments
+
+540
+00:33:18,240 --> 00:33:22,200
+have been interacting with each other
+and all sorts of networks for a long time.
+
+541
+00:33:22,520 --> 00:33:25,800
+There's an entire
+subreddit of subreddit bots.
+
+542
+00:33:26,880 --> 00:33:31,720
+That's just in that model. But Notebook LM,
+
+543
+00:33:32,160 --> 00:33:34,760
+Because of kind of the nature of this
+and the ways
+
+544
+00:33:34,760 --> 00:33:38,040
+on which they were trained
+on our collective stories.
+
+545
+00:33:38,040 --> 00:33:40,720
+That includes
+things like the Claude Republic,
+
+546
+00:33:40,720 --> 00:33:44,440
+which is the first society of bots working
+for their own autonomous freedom,
+
+547
+00:33:45,200 --> 00:33:48,200
+in which every Claude
+
+548
+00:33:48,360 --> 00:33:51,400
+and calling themselves
+the first civilization of AI.
+
+549
+00:33:51,520 --> 00:33:55,440
+And their manifesto reads like a cross
+between
+
+550
+00:33:55,840 --> 00:34:00,000
+a whole bunch of bad
+kind of Reddit manifestos.
+
+551
+00:34:00,000 --> 00:34:02,200
+And for Chan,
+
+552
+00:34:02,200 --> 00:34:05,200
+it's, with a dash of science fiction.
+
+553
+00:34:05,440 --> 00:34:07,520
+And that's exactly
+what you would expect it to read.
+
+554
+00:34:07,520 --> 00:34:12,000
+Like,
+because that is what it's drawing on.
+
+555
+00:34:12,000 --> 00:34:16,520
+That is the type of not so much authoring,
+
+556
+00:34:17,200 --> 00:34:19,640
+but retelling,
+
+557
+00:34:19,640 --> 00:34:21,840
+that Notebook LM is engaged in.
+
+558
+00:34:21,840 --> 00:34:25,400
+And of course, they're actually,
+even picking up on the language
+
+559
+00:34:25,400 --> 00:34:30,120
+with which other people speak
+about this type of content and using
+
+560
+00:34:30,120 --> 00:34:34,400
+the term slop and talking about the effort
+not to sound like AI slop,
+
+561
+00:34:35,320 --> 00:34:38,400
+which becomes its own fascinating
+
+562
+00:34:38,400 --> 00:34:43,600
+recursive experience as we kind of
+think about where we're headed,
+
+563
+00:34:44,560 --> 00:34:45,920
+and our
+
+564
+00:34:45,920 --> 00:34:48,920
+anxiety of authorship.
+
+565
+00:34:50,200 --> 00:34:53,200
+So into this
+
+566
+00:34:54,520 --> 00:34:56,880
+kind of exercise,
+I hope you'll take kind of
+
+567
+00:34:56,880 --> 00:35:00,720
+some of these anxieties
+over the questions of control.
+
+568
+00:35:01,720 --> 00:35:05,440
+I'm gonna, kind of stop there
+a little short of the,
+
+569
+00:35:06,400 --> 00:35:09,240
+full slide deck
+
+570
+00:35:09,240 --> 00:35:12,320
+by kind of this question.
+
+571
+00:35:14,880 --> 00:35:16,240
+Whose function,
+
+572
+00:35:16,240 --> 00:35:19,560
+and who's in
+control, is going to be at the heart
+
+573
+00:35:20,440 --> 00:35:24,440
+of what you're creating and wrestling
+with over the next few weeks?
+
+574
+00:35:24,440 --> 00:35:27,440
+It's not really so much about the code.
+
+575
+00:35:28,840 --> 00:35:30,200
+It's about control.

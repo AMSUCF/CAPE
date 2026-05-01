@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Name Machine — Foucault's Author Function</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow: hidden; background: #0a0a0a; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+<script>
+// === CONFIGURATION ===
+const ACT1_END = 720;    // frame 720 = ~12s
+const ACT2_END = 2160;   // frame 2160 = ~36s
+const ACT3_END = 3600;   // frame 3600 = ~60s
+
+let spaceMonoFont;
+
+// === UTILITIES ===
+function easeInOut(t) {
+  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+}
+
+function mapFrame(current, start, end) {
+  return constrain((current - start) / (end - start), 0, 1);
+}
+
+// === TEXT ELEMENT ===
+class TextElement {
+  constructor(text, x, y, size, col) {
+    this.text = text;
+    this.x = x;
+    this.y = y;
+    this.targetX = x;
+    this.targetY = y;
+    this.size = size;
+    this.targetSize = size;
+    this.col = col || color(245, 240, 232);  // warm off-white default
+    this.opacity = 0;
+    this.targetOpacity = 0;
+    this.angle = 0;
+    this.targetAngle = 0;
+    this.orbitRadius = 0;
+    this.orbitSpeed = 0;
+    this.orbitCenter = null;
+    this.glitchAmount = 0;
+    this.revealed = -1; // -1 = show full text; 0+ = typewriter (chars revealed)
+    this.fitWidth = false; // auto-scale to fit canvas width
+    this.lerpSpeed = 0.03;
+  }
+
+  moveTo(x, y) {
+    this.targetX = x;
+    this.targetY = y;
+  }
+
+  fadeIn(speed) {
+    this.targetOpacity = 255;
+    if (speed) this.lerpSpeed = speed;
+  }
+
+  fadeOut(speed) {
+    this.targetOpacity = 0;
+    if (speed) this.lerpSpeed = speed;
+  }
+
+  orbit(cx, cy, radius, speed) {
+    this.orbitCenter = { x: cx, y: cy };
+    this.orbitRadius = radius;
+    this.orbitSpeed = speed;
+  }
+
+  slamTo(size, speed) {
+    this.targetSize = size;
+    this.lerpSpeed = speed || 0.15;
+  }
+
+  leaveTrail() {
+    if (this.opacity > 10) {
+      addTrail(this.x, this.y, this.text, this.size, this.col, this.opacity * 0.4);
+    }
+  }
+
+  update() {
+    this.x = lerp(this.x, this.targetX, this.lerpSpeed);
+    this.y = lerp(this.y, this.targetY, this.lerpSpeed);
+    this.opacity = lerp(this.opacity, this.targetOpacity, this.lerpSpeed);
+    this.size = lerp(this.size, this.targetSize, this.lerpSpeed);
+
+    if (this.orbitCenter) {
+      this.angle += this.orbitSpeed;
+      this.targetX = this.orbitCenter.x + cos(this.angle) * this.orbitRadius;
+      this.targetY = this.orbitCenter.y + sin(this.angle) * this.orbitRadius;
+    }
+  }
+
+  display() {
+    if (this.opacity < 1) return;
+    push();
+    let displayText = this.text;
+    if (this.revealed >= 0 && this.revealed < this.text.length) {
+      displayText = this.text.substring(0, this.revealed);
+    }
+
+    let dx = 0, dy = 0;
+    if (this.glitchAmount > 0) {
+      dx = random(-this.glitchAmount, this.glitchAmount);
+      dy = random(-this.glitchAmount, this.glitchAmount);
+    }
+
+    let c = color(red(this.col), green(this.col), blue(this.col), this.opacity);
+    fill(c);
+    noStroke();
+    textSize(this.size);
+
+    // Auto-scale text to fit within canvas with padding
+    if (this.fitWidth) {
+      let tw = textWidth(displayText);
+      let maxW = width - 80;
+      if (tw > maxW && tw > 0) {
+        textSize(this.size * (maxW / tw));
+      }
+    }
+
+    text(displayText, this.x + dx, this.y + dy);
+    pop();
+  }
+}
+
+// === GHOST TRAILS ===
+let trails = [];
+
+function addTrail(x, y, txt, size, col, opacity) {
+  trails.push({ x, y, txt, size, col, opacity, life: 1.0 });
+}
+
+function updateAndDrawTrails() {
+  for (let i = trails.length - 1; i >= 0; i--) {
+    let t = trails[i];
+    t.life -= 0.08;
+    if (t.life <= 0) {
+      trails.splice(i, 1);
+      continue;
+    }
+    push();
+    fill(red(t.col), green(t.col), blue(t.col), t.opacity * t.life);
+    noStroke();
+    textSize(t.size);
+    text(t.txt, t.x, t.y);
+    pop();
+  }
+}
+
+// === SCREEN FLASH ===
+let flashOpacity = 0;
+
+function triggerFlash() {
+  flashOpacity = 200;
+}
+
+function drawFlash() {
+  if (flashOpacity > 0) {
+    noStroke();
+    fill(255, flashOpacity);
+    rect(0, 0, width, height);
+    flashOpacity *= 0.7;
+  }
+}
+
+// === TEXT FLOOD ===
+let floodWords = [];
+const ALL_VOCABULARY = [
+  "genius", "intention", "biography", "origin", "authority", "voice",
+  "classification", "legal status", "discourse", "oeuvre", "copyright",
+  "ownership", "transgression", "constructed", "attributed", "narrator",
+  "dispersion", "function", "author", "name", "text", "power",
+  "archaeology", "punishment", "liability", "character"
+];
+
+function spawnFloodWord() {
+  let word = ALL_VOCABULARY[floor(random(ALL_VOCABULARY.length))];
+  let sz = random() < 0.1 ? random(80, 200) : random(8, 24);
+  let fw = new TextElement(word, random(width), random(height), sz, color(200, 216, 232));
+  fw.opacity = random(40, 160);
+  fw.targetOpacity = 0;
+  fw.lerpSpeed = 0.02 + random(0.03);
+  floodWords.push(fw);
+}
+
+function updateAndDrawFlood() {
+  for (let i = floodWords.length - 1; i >= 0; i--) {
+    floodWords[i].update();
+    floodWords[i].display();
+    if (floodWords[i].opacity < 2) {
+      floodWords.splice(i, 1);
+    }
+  }
+}
+
+// === AUDIO ENGINE (Web Audio API — no dependencies) ===
+let audioStarted = false;
+let waitingForClick = true;
+let actx; // AudioContext
+let masterGain;
+let droneOsc, droneGain, droneFilter;
+let noiseNode, noiseGain;
+
+function initAudio() {
+  actx = new (window.AudioContext || window.webkitAudioContext)();
+  masterGain = actx.createGain();
+  masterGain.gain.value = 0.5;
+  masterGain.connect(actx.destination);
+}
+
+// --- Instrument functions ---
+
+function playSlam(freq) {
+  let t = actx.currentTime;
+  let osc = actx.createOscillator();
+  let gain = actx.createGain();
+  osc.type = "sine";
+  osc.frequency.setValueAtTime(freq * 4, t);
+  osc.frequency.exponentialRampToValueAtTime(freq, t + 0.08);
+  gain.gain.setValueAtTime(0.4, t);
+  gain.gain.exponentialRampToValueAtTime(0.001, t + 0.5);
+  osc.connect(gain).connect(masterGain);
+  osc.start(t);
+  osc.stop(t + 0.5);
+}
+
+function playPing(freq) {
+  let t = actx.currentTime;
+  let osc = actx.createOscillator();
+  let gain = actx.createGain();
+  osc.type = "sine";
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(0.15, t);
+  gain.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
+  osc.connect(gain).connect(masterGain);
+  osc.start(t);
+  osc.stop(t + 0.4);
+}
+
+function playPluck(freq) {
+  let t = actx.currentTime;
+  let osc = actx.createOscillator();
+  let gain = actx.createGain();
+  let filter = actx.createBiquadFilter();
+  osc.type = "sawtooth";
+  osc.frequency.value = freq;
+  filter.type = "lowpass";
+  filter.frequency.setValueAtTime(3000, t);
+  filter.frequency.exponentialRampToValueAtTime(200, t + 0.15);
+  gain.gain.setValueAtTime(0.2, t);
+  gain.gain.exponentialRampToValueAtTime(0.001, t + 0.2);
+  osc.connect(filter).connect(gain).connect(masterGain);
+  osc.start(t);
+  osc.stop(t + 0.2);
+}
+
+function playBass(freq) {
+  let t = actx.currentTime;
+  let osc = actx.createOscillator();
+  let gain = actx.createGain();
+  osc.type = "square";
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(0.25, t);
+  gain.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+  osc.connect(gain).connect(masterGain);
+  osc.start(t);
+  osc.stop(t + 0.3);
+}
+
+function playGlitch(freq) {
+  let t = actx.currentTime;
+  let osc = actx.createOscillator();
+  let gain = actx.createGain();
+  osc.type = "square";
+  osc.frequency.value = freq;
+  osc.frequency.setValueAtTime(freq, t);
+  osc.frequency.linearRampToValueAtTime(freq * (0.5 + Math.random()), t + 0.04);
+  gain.gain.setValueAtTime(0.12, t);
+  gain.gain.exponentialRampToValueAtTime(0.001, t + 0.06);
+  osc.connect(gain).connect(masterGain);
+  osc.start(t);
+  osc.stop(t + 0.06);
+}
+
+function playChord(freqs, duration) {
+  let t = actx.currentTime;
+  for (let freq of freqs) {
+    let osc = actx.createOscillator();
+    let gain = actx.createGain();
+    osc.type = "sine";
+    osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0.12, t);
+    gain.gain.setValueAtTime(0.12, t + duration * 0.6);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + duration);
+    osc.connect(gain).connect(masterGain);
+    osc.start(t);
+    osc.stop(t + duration);
+  }
+}
+
+function startDrone(freq) {
+  droneOsc = actx.createOscillator();
+  droneGain = actx.createGain();
+  droneFilter = actx.createBiquadFilter();
+  droneOsc.type = "sawtooth";
+  droneOsc.frequency.value = freq;
+  droneFilter.type = "lowpass";
+  droneFilter.frequency.value = 150;
+  droneFilter.Q.value = 5;
+  droneGain.gain.value = 0;
+  droneGain.gain.linearRampToValueAtTime(0.15, actx.currentTime + 3);
+  droneOsc.connect(droneFilter).connect(droneGain).connect(masterGain);
+  droneOsc.start();
+}
+
+function stopDrone(fadeTime) {
+  if (!droneGain) return;
+  let t = actx.currentTime;
+  droneGain.gain.linearRampToValueAtTime(0, t + fadeTime);
+  droneOsc.stop(t + fadeTime + 0.1);
+}
+
+function startNoise() {
+  let bufferSize = actx.sampleRate * 2;
+  let buffer = actx.createBuffer(1, bufferSize, actx.sampleRate);
+  let data = buffer.getChannelData(0);
+  // Brown noise
+  let last = 0;
+  for (let i = 0; i < bufferSize; i++) {
+    let white = Math.random() * 2 - 1;
+    data[i] = (last + 0.02 * white) / 1.02;
+    last = data[i];
+    data[i] *= 3.5;
+  }
+  noiseNode = actx.createBufferSource();
+  noiseNode.buffer = buffer;
+  noiseNode.loop = true;
+  noiseGain = actx.createGain();
+  noiseGain.gain.value = 0;
+  let filter = actx.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.frequency.value = 600;
+  noiseNode.connect(filter).connect(noiseGain).connect(masterGain);
+  noiseNode.start();
+}
+
+function setNoiseGain(val, rampTime) {
+  if (!noiseGain) return;
+  noiseGain.gain.linearRampToValueAtTime(val, actx.currentTime + rampTime);
+}
+
+function stopNoise(fadeTime) {
+  if (!noiseNode) return;
+  setNoiseGain(0, fadeTime);
+  noiseNode.stop(actx.currentTime + fadeTime + 0.1);
+}
+
+// Note frequency helpers
+const NOTE_FREQS = {
+  C1:32.7, D1:36.7, E1:41.2, F1:43.7, G1:49.0, A1:55.0, B1:61.7,
+  C2:65.4, D2:73.4, E2:82.4, F2:87.3, G2:98.0, A2:110, Bb2:116.5, B2:123.5,
+  C3:130.8, Eb3:155.6, E3:164.8, F3:174.6, "F#3":185.0, G3:196.0, A3:220,
+  C4:261.6, D4:293.7, E4:329.6, G4:392.0, A4:440,
+  C5:523.3, D5:587.3, E5:659.3, G5:784.0, A5:880, B5:987.8,
+  D6:1174.7, E6:1318.5, G6:1568, C7:2093
+};
+function noteFreq(name) { return NOTE_FREQS[name] || 440; }
+
+// Note pools
+const SLAM_NOTES = ["C1","D1","E1","F1","G1","A1","B1","C2"];
+const PING_NOTES = ["E5","G5","A5","B5","D6","E6"];
+const PLUCK_NOTES = ["C4","D4","E4","G4","A4","C5","D5","E5"];
+const BASS_NOTES = ["C2","E2","G2","B2","D2","F2","A2","C3","Eb3","Bb2","F2"];
+const GLITCH_NOTES = ["C5","E5","G5","C6","E6","G6"];
+const PROVOCATION_CHORDS = [
+  ["D2","F#3","A3"],
+  ["E2","G3","B3"],
+  ["C2","Eb3","G3"],
+  ["F2","A3","C4"]
+];
+
+// Frame-based one-shot tracking
+let audioTriggered = {};
+function triggerOnce(key, fn) {
+  if (!audioTriggered[key] && audioStarted) {
+    audioTriggered[key] = true;
+    fn();
+  }
+}
+
+function updateAudio() {
+  if (!audioStarted) return;
+  let f = frameCount;
+
+  // === ACT 1 AUDIO ===
+  if (f <= ACT1_END) {
+    // Start drone
+    triggerOnce("drone", () => startDrone(noteFreq("C1")));
+
+    // Slam hit per letter
+    for (let i = 0; i < 8; i++) {
+      let slamFrame = i * 20 + 10;
+      if (f === slamFrame) {
+        triggerOnce("slam" + i, () => playSlam(noteFreq(SLAM_NOTES[i])));
+      }
+    }
+
+    // Satellite pings
+    for (let i = 0; i < 6; i++) {
+      let arriveFrame = 150 + i * 30 + 5;
+      if (f === arriveFrame) {
+        triggerOnce("ping" + i, () => playPing(noteFreq(PING_NOTES[i])));
+      }
+    }
+
+    // Drone opens up
+    if (f === 200) {
+      triggerOnce("droneOpen", () => {
+        droneFilter.frequency.linearRampToValueAtTime(400, actx.currentTime + 5);
+      });
+    }
+
+    // Drone closes before Act 2
+    if (f === ACT1_END - 60) {
+      triggerOnce("droneShift1", () => {
+        droneFilter.frequency.linearRampToValueAtTime(120, actx.currentTime + 1);
+      });
+    }
+  }
+
+  // === ACT 2 AUDIO ===
+  if (f > ACT1_END && f <= ACT2_END) {
+    let actFrame = f - ACT1_END;
+
+    // Drone evolves
+    if (actFrame === 1) {
+      triggerOnce("droneEvolve", () => {
+        droneOsc.frequency.linearRampToValueAtTime(noteFreq("E1"), actx.currentTime + 5);
+        droneFilter.frequency.linearRampToValueAtTime(500, actx.currentTime + 8);
+      });
+    }
+
+    // Staccato plucks for cluster words
+    for (let gi = 0; gi < 4; gi++) {
+      let wordsInGroup = [4, 5, 4, 4][gi];
+      for (let wi = 0; wi < wordsInGroup; wi++) {
+        let wordFrame = ACT1_END + 100 + gi * 60 + wi * 8;
+        if (f === wordFrame) {
+          triggerOnce("pluck" + gi + "_" + wi, () => {
+            playPluck(noteFreq(PLUCK_NOTES[(gi * 4 + wi) % PLUCK_NOTES.length]));
+          });
+        }
+      }
+    }
+
+    // YHCHI caption bass hits
+    for (let i = 0; i < ACT2_CAPTION_WORDS.length; i++) {
+      let captionWordFrame = ACT1_END + 600 + i * 15;
+      if (f === captionWordFrame) {
+        triggerOnce("bass" + i, () => {
+          playBass(noteFreq(BASS_NOTES[i % BASS_NOTES.length]));
+        });
+      }
+    }
+
+    // Drone fades before Act 3
+    if (actFrame === 1300) {
+      triggerOnce("droneFade", () => stopDrone(3));
+    }
+  }
+
+  // === ACT 3 AUDIO ===
+  if (f > ACT2_END && f <= ACT3_END) {
+    let actFrame = f - ACT2_END;
+
+    // AI typing clicks
+    for (let i = 0; i < 4; i++) {
+      let startFrame = i * 40;
+      for (let c = 0; c < AI_NAMES[i].length; c++) {
+        let charFrame = ACT2_END + startFrame + floor(c * (40 / AI_NAMES[i].length));
+        if (f === charFrame) {
+          triggerOnce("type" + i + "_" + c, () => {
+            playGlitch(noteFreq(GLITCH_NOTES[floor(Math.random() * GLITCH_NOTES.length)]));
+          });
+        }
+      }
+    }
+
+    // Noise builds with chaos
+    if (actFrame === 400) {
+      triggerOnce("noiseStart", () => {
+        startNoise();
+        setNoiseGain(0.15, 8);
+      });
+    }
+
+    // Glitch blips during scatter
+    if (actFrame > 200 && actFrame < 900 && Math.random() < 0.03) {
+      playGlitch(noteFreq(GLITCH_NOTES[floor(Math.random() * GLITCH_NOTES.length)]));
+    }
+
+    // Provocation chords
+    for (let i = 0; i < 4; i++) {
+      let provFrame = ACT2_END + 800 + i * 120;
+      if (f === provFrame) {
+        triggerOnce("prov" + i, () => {
+          playChord(PROVOCATION_CHORDS[i].map(noteFreq), 3);
+        });
+      }
+    }
+
+    // Noise fades out
+    if (actFrame === 1100) {
+      triggerOnce("noiseFade", () => stopNoise(5));
+    }
+
+    // Final silence
+    if (actFrame === 1380) {
+      triggerOnce("silence", () => {
+        masterGain.gain.linearRampToValueAtTime(0, actx.currentTime + 2);
+      });
+    }
+  }
+}
+
+// === ACT 1 STATE ===
+let nameLetters = [];
+let mainName; // keep for backward compat in Act 2
+let satelliteWords = [];
+let act1Caption;
+let act1Initialized = false;
+const SATELLITES = ["genius", "intention", "biography", "origin", "authority", "voice"];
+const NAME = "FOUCAULT";
+
+function initAct1() {
+  // Individual letters for staccato slam-in
+  let totalWidth = NAME.length * 52; // approximate letter spacing
+  let startX = width / 2 - totalWidth / 2 + 26;
+  for (let i = 0; i < NAME.length; i++) {
+    let letter = new TextElement(NAME[i], startX + i * 52, -100, 200, color(245, 240, 232));
+    letter.revealed = -1;
+    letter.opacity = 0;
+    letter.targetOpacity = 255;
+    letter.targetSize = 80;
+    nameLetters.push(letter);
+  }
+
+  // Also create the composite mainName for later acts
+  mainName = new TextElement("FOUCAULT", width / 2, height / 2, 80, color(245, 240, 232));
+  mainName.opacity = 0;
+  mainName.targetOpacity = 0;
+
+  // Satellites start off-screen
+  for (let i = 0; i < SATELLITES.length; i++) {
+    let edge = floor(random(4));
+    let sx, sy;
+    if (edge === 0) { sx = -100; sy = random(height); }
+    else if (edge === 1) { sx = width + 100; sy = random(height); }
+    else if (edge === 2) { sx = random(width); sy = -100; }
+    else { sx = random(width); sy = height + 100; }
+    let s = new TextElement(SATELLITES[i], sx, sy, 20, color(245, 240, 232, 180));
+    let angle = (TWO_PI / SATELLITES.length) * i;
+    s.angle = angle;
+    s.lerpSpeed = 0.08; // fast initial approach
+    satelliteWords.push(s);
+  }
+
+  act1Caption = new TextElement(
+    "We begin with a name.",
+    width / 2, height / 2 + 120, 0.1, color(245, 240, 232)
+  );
+  act1Caption.targetSize = 16;
+  act1Caption.opacity = 255;
+  act1Caption.targetOpacity = 255;
+}
+
+function drawAct1() {
+  let f = frameCount;
+
+  // Phase 1: Letters slam in one by one (frames 1-200)
+  for (let i = 0; i < nameLetters.length; i++) {
+    let slamFrame = i * 20 + 10; // every 20 frames = every 0.33s
+    if (f === slamFrame) {
+      nameLetters[i].opacity = 255;
+      nameLetters[i].size = 200;
+      nameLetters[i].y = height / 2;
+      nameLetters[i].targetSize = 80;
+      nameLetters[i].lerpSpeed = 0.12;
+      triggerFlash();
+    }
+  }
+
+  // Phase 2: Name breathes (frames 200-500)
+  if (f > 200 && f <= 500) {
+    let breathe = sin(f * 0.08) * 10;
+    for (let letter of nameLetters) {
+      letter.targetSize = 80 + breathe;
+    }
+  }
+
+  // Phase 3: Satellites rush in (frames 150-400)
+  if (f > 150 && f <= 400) {
+    for (let i = 0; i < satelliteWords.length; i++) {
+      let arriveFrame = 150 + i * 30;
+      if (f > arriveFrame && !satelliteWords[i].orbitCenter) {
+        satelliteWords[i].orbit(width / 2, height / 2, 140 + random(60), 0.006 + random(0.004));
+        satelliteWords[i].fadeIn(0.06);
+      }
+      // Random scale spikes
+      if (f > arriveFrame && random() < 0.02) {
+        satelliteWords[i].targetSize = random(40, 60);
+      } else if (f > arriveFrame) {
+        satelliteWords[i].targetSize = lerp(satelliteWords[i].targetSize, 20, 0.1);
+      }
+    }
+  }
+
+  // Phase 4: Caption scales up (frames 350-550)
+  if (f > 350 && f <= 550) {
+    act1Caption.targetSize = 16;
+    act1Caption.lerpSpeed = 0.04;
+  }
+  if (f > 550) {
+    act1Caption.targetSize = 0.1;
+    act1Caption.fadeOut(0.06);
+  }
+
+  // Phase 5: Letters separate and drift (frames 600-720)
+  if (f > 600) {
+    let drift = mapFrame(f, 600, 720);
+    for (let i = 0; i < nameLetters.length; i++) {
+      let spread = (i - 3.5) * drift * 40;
+      nameLetters[i].targetX = width / 2 - 182 + i * 52 + spread;
+      nameLetters[i].targetY = height / 2 + sin(i * 1.5) * drift * 30;
+      nameLetters[i].leaveTrail();
+    }
+  }
+
+  // Update and display
+  for (let letter of nameLetters) { letter.update(); letter.display(); }
+  for (let s of satelliteWords) { s.update(); s.display(); }
+  act1Caption.update();
+  act1Caption.display();
+  updateAndDrawTrails();
+  drawFlash();
+}
+
+// === ACT 2 STATE ===
+let clusterLabels = [];
+let clusterWords = [];
+let act2Caption;
+let connectionLines = [];
+let act2Initialized = false;
+
+const CLUSTERS = [
+  {
+    label: "classification",
+    words: ["The Order of Things", "archaeology", "discourse", "oeuvre"],
+    tx: 0.25, ty: 0.3
+  },
+  {
+    label: "legal status",
+    words: ["copyright", "ownership", "transgression", "punishment", "liability"],
+    tx: 0.75, ty: 0.3
+  },
+  {
+    label: "relation to discourse",
+    words: ["not behind the text", "a function of discourse", "constructed", "attributed"],
+    tx: 0.25, ty: 0.7
+  },
+  {
+    label: "plural selves",
+    words: ["the 'I' who writes", "narrator", "character", "dispersion"],
+    tx: 0.75, ty: 0.7
+  }
+];
+
+// YHCHI caption word sequence
+const ACT2_CAPTION_WORDS = ["The", "author", "is", "not", "a", "person.", "It", "is", "a", "function", "—"];
+const ACT2_FULL_CAPTION = "The author is not a person. It is a function — a principle by which we organize, classify, and delimit discourse.";
+
+function initAct2() {
+  if (act2Initialized) return;
+  act2Initialized = true;
+
+  // Fade out satellites fast
+  for (let s of satelliteWords) {
+    s.fadeOut(0.08);
+    s.orbitCenter = null;
+  }
+
+  // Assign name letters to clusters (2 per cluster)
+  let letterAssign = [[0,1],[2,3],[4,5],[6,7]]; // FO, UC, AU, LT
+  for (let i = 0; i < CLUSTERS.length; i++) {
+    let c = CLUSTERS[i];
+
+    // Fly assigned letters toward cluster position
+    for (let li of letterAssign[i]) {
+      if (li < nameLetters.length) {
+        nameLetters[li].moveTo(width * c.tx, height * c.ty - 40);
+        nameLetters[li].targetSize = 14;
+        nameLetters[li].fadeOut(0.02);
+      }
+    }
+
+    let lbl = new TextElement(c.label, width / 2, height / 2, 10, color(200, 216, 232));
+    lbl.moveTo(width * c.tx, height * c.ty);
+    lbl.targetSize = 32;
+    lbl.fadeIn(0.03);
+    clusterLabels.push(lbl);
+
+    let words = [];
+    for (let j = 0; j < c.words.length; j++) {
+      let w = new TextElement(
+        c.words[j],
+        width / 2,
+        height / 2,
+        6,
+        color(200, 216, 232, 160)
+      );
+      let offsetAngle = (TWO_PI / c.words.length) * j;
+      let ox = cos(offsetAngle) * (70 + random(40));
+      let oy = sin(offsetAngle) * (50 + random(30));
+      w.moveTo(width * c.tx + ox, height * c.ty + 35 + oy);
+      w.targetSize = 14;
+      // Don't fade in yet — drawAct2 handles staccato timing
+      w.opacity = 0;
+      words.push(w);
+    }
+    clusterWords.push(words);
+  }
+
+  connectionLines = [[0,1],[1,3],[3,2],[2,0],[0,3],[1,2]];
+
+  // YHCHI caption — starts empty
+  act2Caption = new TextElement("", width / 2, height / 2, 48, color(200, 216, 232));
+  act2Caption.fitWidth = true;
+}
+
+function drawAct2() {
+  let f = frameCount;
+  let actFrame = f - ACT1_END;
+
+  // Name letters fly out with trails (early frames)
+  if (actFrame < 200) {
+    for (let letter of nameLetters) {
+      letter.leaveTrail();
+      letter.update();
+      letter.display();
+    }
+  }
+
+  // Phase 1: Cluster words arrive in staccato bursts (act frames 100-600)
+  if (actFrame > 100 && actFrame <= 600) {
+    for (let gi = 0; gi < clusterWords.length; gi++) {
+      let groupDelay = gi * 60;
+      for (let wi = 0; wi < clusterWords[gi].length; wi++) {
+        let wordFrame = 100 + groupDelay + wi * 8; // 8 frames apart = staccato
+        if (actFrame > wordFrame && clusterWords[gi][wi].opacity < 10) {
+          clusterWords[gi][wi].opacity = 160;
+          clusterWords[gi][wi].targetOpacity = 160;
+          clusterWords[gi][wi].size = 30; // start bigger, snap down
+          clusterWords[gi][wi].targetSize = 14;
+          clusterWords[gi][wi].lerpSpeed = 0.1;
+        }
+        // Occasional emphasis flash
+        if (actFrame > wordFrame && random() < 0.005) {
+          clusterWords[gi][wi].size = 60;
+          clusterWords[gi][wi].targetSize = 14;
+        }
+      }
+    }
+  }
+
+  // Words leak between clusters
+  if (actFrame > 400) {
+    for (let group of clusterWords) {
+      for (let w of group) {
+        if (random() < 0.001) {
+          let wrongCluster = CLUSTERS[floor(random(CLUSTERS.length))];
+          w.moveTo(width * wrongCluster.tx + random(-80, 80), height * wrongCluster.ty + random(-50, 50));
+        }
+      }
+    }
+  }
+
+  // Phase 2: YHCHI caption (act frames 600-1000)
+  if (actFrame > 600 && actFrame <= 1000) {
+    let captionFrame = actFrame - 600;
+    let wordIndex = floor(captionFrame / 15); // new word every 15 frames = 0.25s
+    if (wordIndex < ACT2_CAPTION_WORDS.length) {
+      act2Caption.text = ACT2_CAPTION_WORDS[wordIndex];
+      act2Caption.size = 60;
+      act2Caption.targetSize = 48;
+      act2Caption.opacity = 255;
+      act2Caption.targetOpacity = 255;
+    } else {
+      // Settle into full sentence
+      act2Caption.text = ACT2_FULL_CAPTION;
+      act2Caption.targetSize = 16;
+      act2Caption.lerpSpeed = 0.05;
+    }
+  }
+
+  // Caption fragments and scatters (act frames 1000-1200)
+  if (actFrame > 1000 && actFrame <= 1200) {
+    act2Caption.fadeOut(0.05);
+    act2Caption.glitchAmount = mapFrame(actFrame, 1000, 1200) * 20;
+  }
+
+  // Phase 3: Connection lines draw progressively (act frames 500-1000)
+  if (actFrame > 500 && actFrame <= 1440) {
+    let lineProgress = mapFrame(actFrame, 500, 1000);
+    let numLines = floor(lineProgress * connectionLines.length);
+    stroke(200, 216, 232, 60);
+    strokeWeight(0.5);
+    for (let i = 0; i < numLines && i < connectionLines.length; i++) {
+      let a = clusterLabels[connectionLines[i][0]];
+      let b = clusterLabels[connectionLines[i][1]];
+      let drawProgress = constrain((lineProgress * connectionLines.length - i), 0, 1);
+      let ex = lerp(a.x, b.x, drawProgress);
+      let ey = lerp(a.y, b.y, drawProgress);
+      line(a.x, a.y, ex, ey);
+    }
+    noStroke();
+  }
+
+  // Gentle drift + overlap on cluster words
+  for (let group of clusterWords) {
+    for (let w of group) {
+      w.targetX += sin(f * 0.015 + w.y * 0.01) * 0.3;
+      w.targetY += cos(f * 0.015 + w.x * 0.01) * 0.2;
+    }
+  }
+
+  // Update and display
+  for (let lbl of clusterLabels) { lbl.update(); lbl.display(); }
+  for (let group of clusterWords) {
+    for (let w of group) { w.update(); w.display(); }
+  }
+  act2Caption.update();
+  act2Caption.display();
+  updateAndDrawTrails();
+  drawFlash();
+}
+
+// === ACT 3 STATE ===
+let aiNames = [];
+let provocations = [];
+let act3Initialized = false;
+
+const AI_NAMES = ["GPT-4", "Claude", "Copilot", "Stable Diffusion"];
+const PROVOCATION_TEXTS = [
+  "Who is the author of a prompt?",
+  "Can a function have no name?",
+  'What discourse does "AI-generated" authorize?',
+  "If authorship is a function... who calls it now?"
+];
+
+function initAct3() {
+  if (act3Initialized) return;
+  act3Initialized = true;
+
+  // AI names at inconsistent scales
+  let scales = [80, 40, 50, 20];
+  for (let i = 0; i < AI_NAMES.length; i++) {
+    let n = new TextElement(
+      AI_NAMES[i],
+      random(width * 0.15, width * 0.85),
+      random(height * 0.15, height * 0.85),
+      scales[i],
+      color(255, 100, 100)
+    );
+    n.revealed = 0;
+    n.opacity = 255;
+    n.targetOpacity = 255;
+    aiNames.push(n);
+  }
+
+  for (let i = 0; i < PROVOCATION_TEXTS.length; i++) {
+    let p = new TextElement(
+      PROVOCATION_TEXTS[i],
+      width / 2,
+      height / 2,
+      10, // start small
+      color(255)
+    );
+    p.fitWidth = true;
+    provocations.push(p);
+  }
+}
+
+function drawAct3() {
+  let f = frameCount;
+  let actFrame = f - ACT2_END;
+
+  // Phase 1: AI names type in (act frames 0-200)
+  if (actFrame <= 200) {
+    for (let i = 0; i < aiNames.length; i++) {
+      let startFrame = i * 40;
+      if (actFrame > startFrame) {
+        let progress = actFrame - startFrame;
+        aiNames[i].revealed = floor(map(progress, 0, 40, 0, aiNames[i].text.length + 1));
+      }
+    }
+  }
+
+  // Phase 2: AI names misbehave + multiply (act frames 150-900)
+  if (actFrame > 150 && actFrame < 900) {
+    for (let i = 0; i < min(aiNames.length, 25); i++) {
+      let n = aiNames[i];
+      n.revealed = -1; // show full text
+      n.targetX += random(-5, 5);
+      n.targetY += random(-5, 5);
+      n.targetX = constrain(n.targetX, 30, width - 30);
+      n.targetY = constrain(n.targetY, 30, height - 30);
+      // Randomize scale continuously
+      if (random() < 0.1) {
+        n.targetSize = random(20, 80);
+      }
+      n.col = color(200 + random(55), 50 + random(100), 100 + random(155));
+      n.leaveTrail();
+    }
+
+    // Spawn copies (multiply)
+    let copyRate = mapFrame(actFrame, 300, 700);
+    if (random() < 0.03 * copyRate && aiNames.length < 25) {
+      let source = aiNames[floor(random(min(4, aiNames.length)))];
+      let copy = new TextElement(
+        source.text,
+        source.x + random(-100, 100),
+        source.y + random(-100, 100),
+        random(15, 60),
+        color(200 + random(55), 50 + random(100), 100 + random(155))
+      );
+      copy.revealed = -1;
+      copy.opacity = random(80, 200);
+      copy.targetOpacity = random(40, 150);
+      copy.lerpSpeed = 0.05;
+      aiNames.push(copy);
+    }
+  }
+
+  // Phase 3: Clusters scatter + glitch (act frames 200-800)
+  if (actFrame > 200 && actFrame < 800) {
+    let intensity = mapFrame(actFrame, 200, 600);
+    for (let lbl of clusterLabels) {
+      lbl.glitchAmount = intensity * 20;
+      // Scatter outward
+      let dx = (lbl.x - width / 2) * 0.005 * intensity;
+      let dy = (lbl.y - height / 2) * 0.005 * intensity;
+      lbl.targetX += dx;
+      lbl.targetY += dy;
+      lbl.targetOpacity = max(0, 255 - intensity * 350);
+    }
+    for (let group of clusterWords) {
+      for (let w of group) {
+        w.glitchAmount = intensity * 12;
+        // Flee outward
+        let dx = (w.x - width / 2) * 0.003 * intensity;
+        let dy = (w.y - height / 2) * 0.003 * intensity;
+        w.targetX += dx;
+        w.targetY += dy;
+        w.targetOpacity = max(0, 180 - intensity * 250);
+        if (random() < 0.01 * intensity) w.leaveTrail();
+      }
+    }
+
+    // Connection lines glitch
+    stroke(200, 216, 232, 60 * (1 - intensity));
+    strokeWeight(0.5);
+    for (let pair of connectionLines) {
+      let a = clusterLabels[pair[0]];
+      let b = clusterLabels[pair[1]];
+      let gx = random(-intensity * 50, intensity * 50);
+      line(a.x + gx, a.y, b.x - gx, b.y);
+    }
+    noStroke();
+
+    // Draw clusters
+    for (let lbl of clusterLabels) { lbl.update(); lbl.display(); }
+    for (let group of clusterWords) {
+      for (let w of group) { w.update(); w.display(); }
+    }
+  }
+
+  // Phase 4: Text flood (act frames 400-1100)
+  if (actFrame > 400 && actFrame < 1100) {
+    let floodRate = mapFrame(actFrame, 400, 700);
+    // Reduce flood during provocations so text stays legible
+    let dampen = actFrame > 800 ? 0.3 : 1.0;
+    let spawnCount = floor(floodRate * 8 * dampen) + 1;
+    for (let i = 0; i < spawnCount; i++) {
+      spawnFloodWord();
+    }
+    // Some at extreme scales (less frequent, smaller max)
+    if (random() < 0.03) {
+      let giant = new TextElement(
+        ALL_VOCABULARY[floor(random(ALL_VOCABULARY.length))],
+        random(width), random(height),
+        random(80, 160),
+        color(200, 216, 232)
+      );
+      giant.opacity = random(15, 40);
+      giant.targetOpacity = 0;
+      giant.lerpSpeed = 0.015;
+      floodWords.push(giant);
+    }
+  }
+
+  // Phase 5: Provocations fight through chaos (act frames 800-1350)
+  if (actFrame > 800 && actFrame <= 1350) {
+    let provFrame = actFrame - 800;
+    let questionsPerFrame = 130; // ~2.2 seconds each
+
+    for (let i = 0; i < provocations.length; i++) {
+      let qStart = i * questionsPerFrame;
+      let qEnd = qStart + questionsPerFrame;
+      if (provFrame >= qStart && provFrame < qEnd) {
+        let growProgress = mapFrame(provFrame, qStart, qStart + 30);
+        provocations[i].size = lerp(10, 48, growProgress);
+        provocations[i].targetSize = 48;
+        provocations[i].opacity = lerp(0, 255, growProgress);
+        provocations[i].targetOpacity = 255;
+        provocations[i].x = width / 2;
+        provocations[i].y = height / 2;
+        // Shrink away at end of window
+        let shrinkProgress = mapFrame(provFrame, qEnd - 20, qEnd);
+        if (shrinkProgress > 0) {
+          provocations[i].targetSize = lerp(48, 5, shrinkProgress);
+          provocations[i].targetOpacity = lerp(255, 0, shrinkProgress);
+        }
+        provocations[i].update();
+
+        // Dark backing so text cuts through chaos
+        let backOpacity = min(provocations[i].opacity, 200) * 0.7;
+        if (backOpacity > 5) {
+          noStroke();
+          fill(10, 8, 6, backOpacity);
+          rectMode(CENTER);
+          rect(width / 2, height / 2, width * 0.85, 80, 4);
+          rectMode(CORNER);
+        }
+
+        provocations[i].display();
+      }
+    }
+  }
+
+  // Phase 6: Noise thins out (act frames 1100-1400)
+  if (actFrame > 1100) {
+    let fadeProgress = mapFrame(actFrame, 1100, 1300);
+    for (let i = 0; i < aiNames.length; i++) {
+      aiNames[i].targetOpacity = max(0, aiNames[i].targetOpacity - fadeProgress * 5);
+    }
+  }
+
+  // Attribution (act frames 1300-1440)
+  if (actFrame > 1300) {
+    let titleFade = mapFrame(actFrame, 1300, 1380);
+    fill(245, 240, 232, titleFade * 120);
+    noStroke();
+    textSize(12);
+    text("after Foucault, \"What Is an Author?\" (1969)", width / 2, height - 40);
+  }
+
+  // Update and display AI names
+  for (let n of aiNames) { n.update(); n.display(); }
+
+  updateAndDrawFlood();
+  updateAndDrawTrails();
+  drawFlash();
+}
+
+function preload() {
+  spaceMonoFont = loadFont('https://cdn.jsdelivr.net/fontsource/fonts/space-mono@latest/latin-400-normal.ttf');
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  textFont(spaceMonoFont);
+  textAlign(CENTER, CENTER);
+  frameRate(60);
+  noLoop(); // wait for click to start
+}
+
+function mousePressed() {
+  if (waitingForClick) {
+    waitingForClick = false;
+    initAudio();
+    audioStarted = true;
+    loop(); // start the animation
+  }
+}
+
+// Listen for autoplay start from parent slide deck
+window.addEventListener('message', (e) => {
+  if (e.data === 'autoplay-start' && waitingForClick) {
+    waitingForClick = false;
+    // Skip audio in autoplay mode (requires user gesture)
+    loop();
+  }
+});
+
+function draw() {
+  // Click-to-start screen
+  if (waitingForClick) {
+    background(10);
+    fill(245, 240, 232, 180);
+    textSize(14);
+    text("click to begin", width / 2, height / 2);
+    return;
+  }
+
+  // Background with subtle color shift per act
+  if (frameCount <= ACT1_END) {
+    background(10, 8, 6);  // very slightly warm
+  } else if (frameCount <= ACT2_END) {
+    let t = mapFrame(frameCount, ACT1_END, ACT1_END + 300);
+    background(lerp(10, 8, t), lerp(8, 10, t), lerp(6, 14, t)); // shift cool
+  } else {
+    background(10);
+  }
+  if (!act1Initialized) { act1Initialized = true; initAct1(); }
+
+  // Update soundtrack
+  updateAudio();
+
+  if (frameCount <= ACT1_END) {
+    drawAct1();
+  }
+
+  if (frameCount > ACT1_END && frameCount <= ACT2_END) {
+    if (!act2Initialized) initAct2();
+    drawAct2();
+  }
+
+  if (frameCount > ACT2_END && frameCount <= ACT3_END) {
+    if (!act3Initialized) initAct3();
+    drawAct3();
+  }
+
+  // After animation ends, hold black and notify parent
+  if (frameCount > ACT3_END) {
+    background(10);
+    if (frameCount === ACT3_END + 1) {
+      window.parent.postMessage('animation-complete', '*');
+    }
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+</script>
+</body>
+</html>

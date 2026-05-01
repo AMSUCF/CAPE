@@ -1,0 +1,52 @@
+New title: The Author Function: Humanity (and Humanities) in the Age of AI
+
+New abstract: The flood of AI-generated text, images, video, and code into spaces previously assumed to be primarily authored by humans has brought with it fundamental questions about the future of art, literature, culture, and labor. Moral panic in higher education has frequently focused on the challenges AI presents through the lens of authorship, and particularly dishonesty in authorship, racing to regulate usage and maintain the integrity of the essay in the face of increasingly competent essay-writing machines. This crisis of authorship is both new and wholly familiar, and the fields of electronic literature and digital humanities have been navigating its contours for decades. From combinatorial poetry to interactive fiction to procedurally generated narratives, electronic literature has long interrogated the boundaries of authorship, agency, and the human-machine creative interface. We've developed both critical frameworks and creative practices for understanding what it means to make meaning with and through computational systems. I propose a framework for understanding agentic AI as the next critical interface for our fields: one that, like all interfaces, is neither neutral nor inevitable, and that the humanities are uniquely positioned to critique, shape, and deploy.
+
+New talk length: 45 minutes
+------------------------------------------------------------------------
+
+add:
+
+opening framing - Foucault (as dialogue screen above the head of a pixel character Foucault):
+
+"The “author-function” is not universal or constant in all discourse. Even within our civilization, the same types of texts have not always required authors; there was a time when those texts which we now call “literary” (stories, folk tales, epics and tragedies) were accepted, circulated and valorized without any questions about the identity of their author. Their anonymity was ignored because their real or supposed age was a sufﬁcient guarantee of their authenticity. Text, however, that we now call “scientiﬁc” (dealing with cosmology and the heavens, medicine or illness, the natural sciences or geography) were only considered truthful during the Middle Ages if the name of the author was indicated. Statements on the order of “Hippocrates said…” or “Pliny tells us that…” were not merely formulas for an argument based on authority; they marked a proven discourse."
+
+Ted Nelson (also dialogue screen above head of pixel Ted Nelson):
+
+"Computers don't actually think. You just think they think. (We think.)"
+
+
+
+later sections on agentic AI:
+
+image - einstein_howitworks
+
+(ironically, the Einstein tool disappeared apparently because of a question of authorship - the name Einstein was disputed)
+
+the artisanal craft of the essay, or of code
+
+the experts would not agree
+
+image - Grammarly
+
+image - smbc_artisanal
+
+
+the Claude author question:
+
+image - claude_author
+image - claude_process
+
+embedded animation - authorfunction.html
+this should play in full, then move to the next scene. it should start on a blackboard, but move to full screen as it plays. 
+
+agents authoring with one another
+
+image - openclaw
+image - moltbook
+image - clawrepublic
+
+From best of Moltbook:
+
+https://www.astralcodexten.com/p/best-of-moltbook
+

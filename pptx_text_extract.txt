@@ -1,0 +1,174 @@
+========================================
+ELO_Feminist_Platforms.pptx
+========================================
+
+=== Slide 1 ===
+Feminist interventions in generative AI
+Anastasia Salter
+Professor of English
+University of Central Florida
+@anasalter.bsky.social
+
+=== Slide 2 ===
+
+=== Slide 3 ===
+https://anastasiasalter.net/HumanitiesAI/
+
+=== Slide 4 ===
+
+=== Slide 5 ===
+
+=== Slide 6 ===
+
+=== Slide 7 ===
+matrix, code, hacking, cyberpunk, data, digital, futuristic, neon, digital art, high tech, virtual reality, cyberspace, glitch, technology, sci fi, computer, programming, dark, binary, encryption, AI, network, security
+OpenJourney and neuralframes
+
+=== Slide 8 ===
+
+=== Slide 9 ===
+
+=== Slide 10 ===
+
+=== Slide 11 ===
+
+=== Slide 12 ===
+
+=== Slide 13 ===
+
+=== Slide 14 ===
+
+=== Slide 15 ===
+
+=== Slide 16 ===
+
+=== Slide 17 ===
+
+=== Slide 18 ===
+
+=== Slide 19 ===
+
+=== Slide 20 ===
+Thank you
+Anastasia salter
+@anasalter.bsky.io
+
+
+========================================
+ELO_GenAI_Futures.pptx
+========================================
+
+=== Slide 1 ===
+GenAI Futures: Imagining Electronic Literature Outside Proprietary Platforms
+Anastasia Salter
+Professor of English
+University of Central Florida
+@anasalter.bsky.social
+
+=== Slide 2 ===
+
+=== Slide 3 ===
+Generative AI
+Acts as cultural software
+Amplifies existing algorithmic bias
+Builds on undercompensated and unrecognized human labor
+"Create an illustration appropriate for a slide criticizing the possibility of feminist generative AI"
+
+=== Slide 4 ===
+https://cwodtke.medium.com/i-love-generative-ai-and-hate-the-companies-building-it-3fb120e512ac
+
+=== Slide 5 ===
+we've been dealing with these problems in e-lit for a long time.
+
+=== Slide 6 ===
+
+=== Slide 7 ===
+https://professionalprograms.mit.edu/blog/leadership/the-gender-gap-in-stem
+
+=== Slide 8 ===
+
+=== Slide 9 ===
+
+=== Slide 10 ===
+
+=== Slide 11 ===
+
+=== Slide 12 ===
+
+=== Slide 13 ===
+
+=== Slide 14 ===
+
+=== Slide 15 ===
+
+=== Slide 16 ===
+
+=== Slide 17 ===
+
+=== Slide 18 ===
+
+=== Slide 19 ===
+
+=== Slide 20 ===
+
+=== Slide 21 ===
+
+=== Slide 22 ===
+I close by addressing one area where responses to large AI models have been surprisingly reactionary—that of intellectual property. Objections to large AI models on copyright grounds amount to a dramatic reversal of attitudes among the American left, what Kirschenbaum and Raley call a "new copyright fundamentalism." Two decades ago, many people now urging copyright infringement claims against AI firms were deriding Metallica and the RIAA for their lawsuits against Napster and its successors. Back then, piracy was cool; we called it "sharing."
+—"Generative Theories, Pretrained Responses: Large AI Models and the Humanities"
+Seth Perlow
+
+=== Slide 23 ===
+
+=== Slide 24 ===
+
+=== Slide 25 ===
+Natalie Lawhead
+"I feel like there's a lot to learn from Flash. As an example of what technology enables for 'the little people', as an example of what it takes to destroy that and basically eradicate a huge portion of digital history, and as an example of how easy it is for something like that to just happen.
+If you look at it through the lens of digital history, it's a good example of how easy it is for something that was really powerful and popular to be lost without much of a trace of what it once was."
+https://www.nathalielawhead.com/candybox/a-short-history-of-flash-the-forgotten-flash-website-movement-when-websites-were-the-new-emerging-artform
+
+=== Slide 26 ===
+https://the-next.eliterature.org/exhibition/afterflash/index.html
+
+=== Slide 27 ===
+The history of Flash preservation reminds us how much we need to support open data, at a time where many communities are establishing new walls.
+—it's also a reminder of the consequences of over-investing in any proprietary system, especially one that compiles and hides its source code.
+
+=== Slide 28 ===
+We need to prioritize the open web over any proprietary tools.
+
+=== Slide 29 ===
+
+=== Slide 30 ===
+The consequences of increasingly closed systems will be felt by artists and researchers, not businesses.
+
+=== Slide 31 ===
+
+=== Slide 32 ===
+Jeremy Douglass proposes three distinct areas of code as feminist act: code feminism, which is made to be used and executed for a feminist purpose; feminist codework, which is code-like but not intended to be run; and feminist code, which is "executable, syntactically subversive embedded language or new programming [code] languages affording a fundamentally different feminist paradigm for software development.
+Critical Code Studies Working Group 2014
+
+=== Slide 33 ===
+
+=== Slide 34 ===
+
+=== Slide 35 ===
+
+=== Slide 36 ===
+https://drive.google.com/file/d/1O2qkjhg7Ei5zZWmBraNwXq4V0lTauspN/view
+
+=== Slide 37 ===
+
+=== Slide 38 ===
+
+=== Slide 39 ===
+
+=== Slide 40 ===
+in this environment, e-lit becomes a powerful tool for critical AI literacy
+
+=== Slide 41 ===
+Thank you!
+Anastasia Salter
+@anasalter.bsky.social
+https://techcrunch.com/2025/06/10/googles-ai-overviews-are-killing-traffic-for-publishers/

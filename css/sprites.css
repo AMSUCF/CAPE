@@ -1,0 +1,34 @@
+/* ============================================
+   Character Sprite (image-based)
+   Uses extracted PNG frames from sprite sheet
+   ============================================ */
+
+#sprite {
+  position: absolute;
+  bottom: 80px;
+  left: 200px;
+  width: 95px;
+  height: 180px;
+  z-index: 10;
+  transition: left 1.4s ease-in-out;
+  image-rendering: pixelated;
+}
+
+#sprite img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+#sprite.hidden {
+  display: none;
+}
+
+#sprite.walking {
+  transition: left 1.4s linear;
+}
+
+#sprite.flip {
+  transform: scaleX(-1);
+}

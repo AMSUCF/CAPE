@@ -1,0 +1,19 @@
+Change the subtitle to Digital Humanities (and Humanity) in the Age of AI
+
+The Ruins 35: replace text with "My work has always been informed by the tension of what technology drives in creative fields, and the realities of that same technology's amplification of racism, misogyny, and toxicity. The culture wars over AI simply extend that tension."
+
+get rid of slide 41 entirely
+
+allow the arrow key to work to advance from slide 46 before the animation is done if needed
+
+modify slide 52 text: instead of what to write, how to write... sub in the word "create"
+
+replace slide 53 with image: apertus text: To take control of our creative work through AI, we need to learn from projects like the Swiss AI Initiative, and build community-driven tools that are thoughtfully and intentionally sourced.
+
+replace slide 54 with image: cape text: Digital humanities scholars are well-positioned to make these interventions through collaborative, feminist approaches to research-creation.
+
+get rid of slide 55 and 56
+
+modify slide 57: And in game studies and design, we're already seeing the impact -- just look at the weird, experimental, and creative works tagged as AI-generated on itch.io so far.
+
+
