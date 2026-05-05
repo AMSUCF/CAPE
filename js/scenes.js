@@ -1,5 +1,5 @@
 /* ============================================
-   Scene Data - 59 scenes, three-act structure
+   Scene Data - 50 scenes, three-act structure
    A quest through the landscape of authorship
    ============================================ */
 
@@ -54,7 +54,7 @@ const SCENES = [
 
   // ===== ACT 2: GENERATIVE AI =====
 
-  { // 3 - AI Explained (NEW)
+  { // 3 - AI Explained
     id: 3,
     room: 'The Lecture Hall',
     template: 'lecture-hall',
@@ -83,75 +83,13 @@ const SCENES = [
       x: 320, y: 34, w: 600, h: 336,
       label: 'Textpocalypse (Kirschenbaum 2023)'
     }],
-    dialogue: "What does it mean if AI becomes one of the dominant modes of authoring text? Kirschenbaum's framework of the textpocalypse asks: what if AI, instead of being trained on human writing, is gradually trained more and more on text that has come from AI? How is our relationship to writing and reading going to fundamentally change?"
-  },
-
-  { // 5 - Reading Stats 1
-    id: 5,
-    room: 'The Lecture Hall',
-    template: 'lecture-hall',
-    transition: 'fade',
-    spriteX: 100,
-    objects: [{
-      img: 'readingstatsone.png',
-      type: 'monitor-screen',
-      x: 320, y: 34, w: 600, h: 336,
-      label: 'Reading statistics (YouGov 2025)'
-    }],
-    dialogue: "The kind of percentages of readership and the acts of reading already -- it's not great. This 2025 study caps out at about 40% of people reading. If you're looking for academic books, they're right there clustered at 10%, just above graphic novels and still beating poetry."
-  },
-
-  { // 6 - Reading Stats 2
-    id: 6,
-    room: 'The Lecture Hall',
-    template: 'lecture-hall',
-    transition: 'wipe-right',
-    spriteX: 100,
-    objects: [{
-      img: 'readingstatstwo.png',
-      type: 'monitor-screen',
-      x: 320, y: 34, w: 600, h: 336,
-      label: 'More reading statistics'
-    }],
-    dialogue: "Those of us with excessive TBR piles and particular attachment to print are in a very low percentage of who is actually doing reading. Most people who read are a small percentage within the context of American adults."
-  },
-
-  // ===== ACT 4: SOMETHING IS READING =====
-
-  { // 7 - LibGen
-    id: 7,
-    room: 'The Data Center',
-    template: 'data-center',
-    transition: 'walk-right',
-    spriteX: 950,
-    objects: [{
-      img: 'libgen.png',
-      type: 'monitor-screen',
-      x: 350, y: 30, w: 520, h: 350,
-      label: 'Library Genesis'
-    }],
-    dialogue: "Well, we know SOMETHING is reading. The Books3 dataset scraped Library Genesis -- 196,640 books fed into AI training. No permission asked, no compensation given."
-  },
-
-  { // 8 - Books3
-    id: 8,
-    room: 'The Data Center',
-    template: 'data-center',
-    transition: 'fade',
-    spriteX: 950,
-    objects: [{
-      img: 'gen_slide21_img2.png',
-      type: 'monitor-screen',
-      x: 350, y: 30, w: 520, h: 350,
-      label: 'Books3 training dataset'
-    }],
-    dialogue: "I saw a few of my titles in there, and pretty much any academic can say the same. Entertainingly, many of us are not eligible to hop in on the lawsuits if we work with small publishers, because they don't bother with all the copyright steps. For academic books, that would probably be more money than most monographs will ever make."
+    dialogue: "How does the author function change as AI becomes a dominant mode of authorship? Kirschenbaum's framework of the textpocalypse asks: what if AI, instead of being trained on human writing, is gradually trained more and more on text that has come from AI?"
   },
 
   // ===== ACT 5: THE END OF BOOKS =====
 
-  { // 9 - Coover
-    id: 9,
+  { // 5 - Coover
+    id: 5,
     room: 'The Archive',
     template: 'archive',
     transition: 'walk-right',
@@ -162,13 +100,13 @@ const SCENES = [
       x: 370, y: 24, w: 500, h: 360,
       label: 'Coover, "The End of Books" (1992)'
     }],
-    dialogue: "In electronic literature, the study of born-digital narratives, we've been talking about the end of books for a long time. Robert Coover declared in 1992 that the novel as we know it has come to its end. He was writing about the hypertext novel, which did not turn out to be the thing that would displace the novel. But that doesn't mean he was wrong."
+    dialogue: "This anxiety of computational reshaping of authorship is not new. In my field, electronic literature, we've been forecasting the end of books for a long time: here's Robert Coover declaring hypertext will kill the novel in 1992."
   },
 
-  // ===== ACT 6: TRACK CHANGES (moved after Coover) =====
+  // ===== ACT 6: TRACK CHANGES =====
 
-  { // 10 - Track Changes
-    id: 10,
+  { // 6 - Track Changes
+    id: 6,
     room: 'The Word Processor',
     template: 'typing-office',
     transition: 'walk-right',
@@ -180,11 +118,11 @@ const SCENES = [
       x: 700, y: 20, w: 300, h: 400,
       label: 'Track Changes'
     }],
-    dialogue: "But every text is 'born-digital' now, even if it does eventually land in print. Every tool changes our writing. From the printing press to the typewriter to the word processor -- each technology reshapes not just how we write, but what we write."
+    dialogue: "The novel isn't dead, but it is now fully born-digital, and the word processor is just one of the forms of cultural software that reshaped how we write before AI got involved."
   },
 
-  { // 11 - Track Changes excerpt
-    id: 11,
+  { // 7 - Track Changes excerpt
+    id: 7,
     room: 'The Word Processor',
     template: 'typing-office',
     transition: 'wipe-right',
@@ -200,20 +138,38 @@ const SCENES = [
 
   // ===== ACT 7: THE PORTRAIT HALL =====
 
-  { // 12 - The Corridor
-    id: 12,
+  { // 8 - The Corridor
+    id: 8,
     room: 'The Portrait Hall',
     template: 'hallway',
     transition: 'walk-right',
     spriteX: 580,
     objects: [],
-    dialogue: "It's not the hypertext novel, but indeed all of the web and digital writing and interactivity -- the ways that we consume and read text -- that have shifted the cultural role of the novel, and shifted where people do creative writing. AI could enter that space and change our relationship with the platforms on which we do most of our authorship and reading."
+    dialogue: "The humanities as a field have been consumed by the panic over writing and AI's ability to displace the human as author. But the impact is far broader than the word processor: every form of cultural software is shifting, including other forms of creative output from hypertext novels to games."
+  },
+
+  // ===== ACT 7b: DON'T PANIC =====
+
+  { // 9 - Don't Panic
+    id: 9,
+    room: 'The Galaxy Hall',
+    template: 'galaxy-hall',
+    transition: 'fade',
+    verb: 'look',
+    spriteX: 200,
+    objects: [{
+      type: 'wall-text',
+      className: 'panic-banner',
+      x: 140, y: 60, w: 1000,
+      text: "DON'T PANIC"
+    }],
+    dialogue: "In response to this panic, I want to take you on a journey through where my past scholarship has brought me to with AI, from the fears I have about our tools to my hopes for our collective future."
   },
 
   // ===== ACT 8: THE FIRST BOOK =====
 
-  { // 13 - Quest
-    id: 13,
+  { // 10 - Quest
+    id: 10,
     room: "The Professor's Office",
     template: 'study',
     transition: 'wipe-right',
@@ -225,43 +181,13 @@ const SCENES = [
       x: 500, y: 20, w: 300, h: 400,
       label: 'Adventure Games: Playing the Outsider'
     }],
-    dialogue: "This was my first book. The working title was 'Magical Books,' which was shot down by a table of scholars at the Electronic Literature Organization in favor of a Monty Python joke."
-  },
-
-  { // 14 - Python
-    id: 14,
-    room: "The Professor's Office",
-    template: 'study',
-    transition: 'diamond',
-    spriteX: 120,
-    objects: [{
-      img: 'python.gif',
-      type: 'monitor-screen',
-      x: 400, y: 40, w: 460, h: 320,
-      label: 'Monty Python and the Holy Grail'
-    }],
-    dialogue: "We went with a quest metaphor instead. I saw interactive fiction and adventure games as extensions of literary tradition -- the reader as hero, the author as architect of possibility."
-  },
-
-  { // 15 - Alice
-    id: 15,
-    room: "The Professor's Office",
-    template: 'study',
-    transition: 'walk-right',
-    spriteX: 100,
-    objects: [{
-      img: 'alice.webp',
-      type: 'ipad-screen',
-      x: 400, y: 80, w: 480, h: 320,
-      label: 'Alice for the iPad (2010)'
-    }],
-    dialogue: "For a moment, there was real excitement about the iPad as something that creative people could build applications for. It turned out to be depressingly wrong -- not because the idea was bad, but because the App Store drove individual creatives out with expensive fees and demands to constantly rebuild for the latest devices. Almost nothing is playable now."
+    dialogue: "I've spent most of my career writing about weird, personal forms of storytelling through digital forms, starting with this first book, which came out of an interest in the expressive possibilities of personal games."
   },
 
   // ===== ACT 9: THE GAME ROOM =====
 
-  { // 16 - Tentacle
-    id: 16,
+  { // 11 - Tentacle
+    id: 11,
     room: 'The Game Room',
     template: 'game-room',
     transition: 'walk-right',
@@ -272,43 +198,13 @@ const SCENES = [
       x: 360, y: 10, w: 540, h: 390,
       label: 'Day of the Tentacle (LucasArts, 1993)'
     }],
-    dialogue: "Day of the Tentacle -- my personal favorite game. These classic graphic adventure games inspired the folks working in things like Bitsy and Twine. Many of them get rendered unplayable or require substantial work and emulation -- done by open source communities and people who care about still being able to read and play those works."
-  },
-
-  { // 17 - Jane Jensen
-    id: 17,
-    room: 'The Game Room',
-    template: 'game-room',
-    transition: 'wipe-right',
-    spriteX: 140,
-    objects: [{
-      img: 'jensen.jpg',
-      type: 'wall-poster',
-      x: 380, y: 10, w: 500, h: 380,
-      label: 'Jane Jensen'
-    }],
-    dialogue: "These eras have amazing examples of authors working with teams of collaborators on digital projects, telling stories just as important as any novel -- like Jane Jensen's Gabriel Knight series. If you haven't played it, I just so highly recommend."
-  },
-
-  { // 18 - Gabriel Knight
-    id: 18,
-    room: 'The Game Room',
-    template: 'game-room',
-    transition: 'wipe-right',
-    spriteX: 140,
-    objects: [{
-      img: 'knight.webp',
-      type: 'monitor-screen',
-      x: 380, y: 10, w: 500, h: 380,
-      label: 'Gabriel Knight: Sins of the Fathers'
-    }],
-    dialogue: "It exists in a remastered version in large part because it has such a fandom -- people who still want it to exist, doing the work of digital preservation and emulation."
+    dialogue: "I grew up on the graphic adventure games like Day of the Tentacle that inspired others to create tools like Adventure Game Studio or Inform 7: tools that would allow those without a development team to make an expressive work."
   },
 
   // ===== ACT 10: TOOLS OF CREATION =====
 
-  { // 19 - AGS
-    id: 19,
+  { // 12 - AGS
+    id: 12,
     room: 'The Game Room',
     template: 'game-room',
     transition: 'walk-right',
@@ -324,8 +220,8 @@ const SCENES = [
 
   // ===== ACT 11: THE FLASH ERA =====
 
-  { // 20 - Flash book
-    id: 20,
+  { // 13 - Flash book
+    id: 13,
     room: 'The Workshop',
     template: 'workshop',
     transition: 'walk-right',
@@ -339,8 +235,8 @@ const SCENES = [
     dialogue: "Similar tools -- and their fate -- was the subject of my next book. Flash empowered an entire generation of web creators, artists, and storytellers to build for the open web."
   },
 
-  { // 21 - Flash creativity
-    id: 21,
+  { // 14 - Flash creativity
+    id: 14,
     room: 'The Workshop',
     template: 'workshop',
     transition: 'wipe-right',
@@ -354,8 +250,8 @@ const SCENES = [
     dialogue: "In its heyday, Flash was amazing and messy, and the features over time were a complete disaster. It tried to be too many things. But it enabled all sorts of really open, experimental authored works that are just fascinating and weird."
   },
 
-  { // 22 - Flash web era
-    id: 22,
+  { // 15 - Flash web era
+    id: 15,
     room: 'The Workshop',
     template: 'workshop',
     transition: 'wipe-right',
@@ -366,13 +262,13 @@ const SCENES = [
       x: 370, y: 20, w: 520, h: 360,
       label: 'The Flash web era'
     }],
-    dialogue: "Apple -- going back to the story of the iPad and their interest in eliminating competition and free authorship on their platform -- refused to support Flash. We've lost libraries worth of animations and games and experiences and weird things as a result of a proprietary platform killing another proprietary platform."
+    dialogue: "The death of Adobe Flash is a warning about how shifts in cultural software can fundamentally destroy creative and expressive works. Apple's decision to tighten their grip on creativity through the app store led to many works being rendered unplayable and unwatchable."
   },
 
   // ===== ACT 12: A VOICE IN THE DARK =====
 
-  { // 23 - Natalie Lawhead quote
-    id: 23,
+  { // 16 - Natalie Lawhead quote
+    id: 16,
     room: 'A Voice in the Dark',
     template: 'dark-room',
     transition: 'fade',
@@ -384,11 +280,11 @@ const SCENES = [
       text: "\"I feel like there's a lot to learn from Flash. As an example of what technology enables for 'the little people', as an example of what it takes to destroy that and basically eradicate a huge portion of digital history, and as an example of how easy it is for something like that to just happen.\"",
       attr: '-- Natalie Lawhead'
     }],
-    dialogue: "An essential Flash and digital artist looks back at the death of Flash and says: we really have to think about how little it takes to destroy a technology that enables a wide number of people to do creative, meaningful digital work. And in that destruction, eradicate a huge portion of digital history."
+    dialogue: "As artist and game designer Natalie Lawhead noted looking back at the remains Flash left behind, a technology that enables creative output for \"the little people\" was easily erased."
   },
 
-  { // 24 - Flash preservation
-    id: 24,
+  { // 17 - Flash preservation
+    id: 17,
     room: 'The Archive Terminal',
     template: 'data-center',
     transition: 'wipe-right',
@@ -404,8 +300,8 @@ const SCENES = [
 
   // ===== ACT 13: TWINE =====
 
-  { // 25 - Twining book
-    id: 25,
+  { // 18 - Twining book
+    id: 18,
     room: 'The Study',
     template: 'study',
     transition: 'walk-right',
@@ -420,8 +316,8 @@ const SCENES = [
     dialogue: "I happened to be in grad school with the person who would make a tool that would be incredibly important to the same types of authors and creators who used Flash -- Chris Klimas created Twine, a tool for the very form Coover thought would overthrow the novel."
   },
 
-  { // 26 - Twine interface
-    id: 26,
+  { // 19 - Twine interface
+    id: 19,
     room: 'The Computer Lab',
     template: 'computer-lab',
     transition: 'iris',
@@ -432,13 +328,13 @@ const SCENES = [
       x: 360, y: 20, w: 540, h: 370,
       label: 'Twine editor interface'
     }],
-    dialogue: "Twine and Flash are tools that might not look much like Word Processors, as they emphasize building content for interaction, but they similarly shape the stories we tell. Instead of trying to produce text to be printed, they're trying to build something designed to continue to live on devices."
+    dialogue: "Twine and Flash are tools that might not look much like word processors, as they emphasize building content for interaction, but they similarly shape the stories we tell. Instead of trying to produce text to be printed, they're trying to build something designed to continue to live on devices."
   },
 
   // ===== ACT 14: OUTSIDER VOICES =====
 
-  { // 27 - Porpentine
-    id: 27,
+  { // 20 - Porpentine
+    id: 20,
     room: 'The Underground',
     template: 'gallery',
     palette: 'gallery-underground',
@@ -453,8 +349,8 @@ const SCENES = [
     dialogue: "Twine empowers individuals working outside of game studios and industry spaces to create, share, and control their own compelling stories and games. As a \"low-code\" tool, it lowers barriers so authors could focus on expression."
   },
 
-  { // 28 - Outsider
-    id: 28,
+  { // 21 - Outsider
+    id: 21,
     room: 'The Underground',
     template: 'gallery',
     palette: 'gallery-underground',
@@ -471,8 +367,8 @@ const SCENES = [
 
   // ===== ACT 15: INTERACTIVE NARRATIVE =====
 
-  { // 29 - KRZ Exchange
-    id: 29,
+  { // 22 - KRZ Exchange
+    id: 22,
     room: 'The Zero Gallery',
     template: 'gallery',
     palette: 'gallery-zero',
@@ -487,8 +383,8 @@ const SCENES = [
     dialogue: "Games like these can help us understand the anxiety of authorship we're experiencing collectively in this moment. For instance, Kentucky Route Zero holds within it a narrative of workers being displaced by machines."
   },
 
-  { // 30 - KRZ Machine
-    id: 30,
+  { // 23 - KRZ Machine
+    id: 23,
     room: 'The Zero Gallery',
     template: 'gallery',
     palette: 'gallery-zero',
@@ -505,8 +401,8 @@ const SCENES = [
 
   // ===== ACT 16: DETERMINATION =====
 
-  { // 31 - Undertale
-    id: 31,
+  { // 24 - Undertale
+    id: 24,
     room: 'Indie Arcade',
     template: 'arcade',
     transition: 'walk-right',
@@ -517,11 +413,11 @@ const SCENES = [
       x: 380, y: 10, w: 500, h: 380,
       label: 'Undertale (Toby Fox, 2015)'
     }],
-    dialogue: "Another powerful expressive game made with low-code tools, Undertale, was built almost entirely by one person, using a free game tool with a lot in common with Adventure Game Studio. It resonated in such a way that it just made people change how they played other games. It has been gifted to a pope."
+    dialogue: "Another powerful expressive game made with low-code tools, Undertale, was authored almost entirely by one person using GameMaker, a low-code tool similar to Adventure Game Studio. It resonated in such a way that it just made people change how they played other games. It has been gifted to a pope."
   },
 
-  { // 32 - Bad Time
-    id: 32,
+  { // 25 - Bad Time
+    id: 25,
     room: 'Indie Arcade',
     template: 'arcade',
     transition: 'wipe-right',
@@ -535,8 +431,8 @@ const SCENES = [
     dialogue: "It challenged players to reconsider their assumptions about what games ask of us. You could fight everything -- or you could choose not to. The game remembers your choices."
   },
 
-  { // 33 - Undertale Humanity
-    id: 33,
+  { // 26 - Undertale Humanity
+    id: 26,
     room: 'Indie Arcade',
     template: 'arcade',
     transition: 'iris',
@@ -547,13 +443,13 @@ const SCENES = [
       x: 380, y: 10, w: 500, h: 380,
       label: 'Despite everything, it\'s still you.'
     }],
-    dialogue: "Despite everything, it's still you. These sorts of pieces, enabled by previous generations of low-code tools and the types of tools that exist outside of highly proprietary environments, speak to the importance of democratizing procedural authorship and access to the tools of code."
+    dialogue: "\"Despite everything, it's still you.\" These sorts of pieces, enabled by previous generations of low-code tools and the types of tools that exist outside of highly proprietary environments, speak to the importance of democratizing procedural authorship and access to the tools of code."
   },
 
   // ===== ACT 17: THE RUINS =====
 
-  { // 34 - The Ruins
-    id: 34,
+  { // 27 - The Ruins
+    id: 27,
     room: 'The Ruins',
     template: 'ruins',
     transition: 'fade-slow',
@@ -570,8 +466,8 @@ const SCENES = [
 
   // ===== ACT 18: TOXIC CULTURE =====
 
-  { // 35 - Geek
-    id: 35,
+  { // 28 - Geek
+    id: 28,
     room: 'The Ruins',
     template: 'ruins',
     transition: 'fade',
@@ -586,8 +482,8 @@ const SCENES = [
     dialogue: "My work has always been informed by the tension of what technology drives in creative fields, and the realities of that same technology's amplification of racism, misogyny, and toxicity. The culture wars over AI simply extend that tension."
   },
 
-  { // 36 - Aftermath
-    id: 36,
+  { // 29 - Aftermath
+    id: 29,
     room: 'The Ruins',
     template: 'ruins',
     transition: 'iris',
@@ -595,16 +491,33 @@ const SCENES = [
     objects: [{
       img: 'aftermath.png',
       type: 'monitor-screen',
-      x: 370, y: 20, w: 520, h: 360,
+      x: 220, y: 16, w: 840, h: 480,
       label: 'Aftermath investigation'
     }],
     dialogue: "As technology and extremism have become further entwined -- and very much part of the conversation in the public sphere -- we are certainly in a moment where to talk about AI and the democratization of procedural authorship sounds pretty contrary."
   },
 
-  // ===== ACT 19: THE AUTHOR'S JOURNEY =====
+  // ===== ACT 19: FEMINIST DISCOMFORT =====
 
-  { // 37 - Palantir (was Fanboy)
-    id: 37,
+  { // 30 - Grok feminist scholar (NEW)
+    id: 30,
+    room: 'The Ruins',
+    template: 'ruins',
+    transition: 'fade',
+    spriteX: 140,
+    objects: [{
+      img: 'grok.png',
+      type: 'monitor-screen',
+      x: 220, y: 16, w: 840, h: 480,
+      label: 'Grok'
+    }],
+    dialogue: "To even talk about the potential of AI to expand rather than contract authorship feels uncomfortable as a feminist scholar, as so many of the current AI tools are both built on marginalized labor and intended to dehumanize."
+  },
+
+  // ===== ACT 20: THE AUTHOR'S JOURNEY =====
+
+  { // 31 - Palantir
+    id: 31,
     room: "The Author's Shelf",
     template: 'ruins',
     transition: 'walk-right',
@@ -612,16 +525,16 @@ const SCENES = [
     objects: [{
       img: 'additions/Palantir.png',
       type: 'monitor-screen',
-      x: 370, y: 20, w: 520, h: 360,
+      x: 90, y: 140, w: 1100, h: 175,
       label: 'Palantir'
     }],
-    dialogue: "I find myself trying to write in a landscape where the things that bring me joy -- the platforms and tools that historically enabled authorship and play -- are a source of perpetual despair and frustration."
+    dialogue: "I find myself trying to author, and create, on platforms and with tools that are decidedly not meant for marginalized creators."
   },
 
-  // ===== ACT 20: CRISIS =====
+  // ===== ACT 21: CRISIS =====
 
-  { // 38 - Pivoting
-    id: 38,
+  { // 32 - Pivoting
+    id: 32,
     room: 'The Crisis Room',
     template: 'study',
     palette: 'study-crisis',
@@ -634,11 +547,11 @@ const SCENES = [
       x: 460, y: 16, w: 340, h: 400,
       label: 'Pivoting'
     }],
-    dialogue: "In the classroom, students and colleagues fatigued from the last five years are now asking how we should write and what we can and should entrust to these technologies. People often get frustrated when there's no one-size-fits-all answer."
+    dialogue: "It is against these challenges that the practices of research creation and critical making provide guidance: we need new tools for authorship that, like AGS and Twine, center the personal."
   },
 
-  { // 39 - Making in the Broken World
-    id: 39,
+  { // 33 - Making in the Broken World
+    id: 33,
     room: 'The Crisis Room',
     template: 'study',
     palette: 'study-crisis',
@@ -651,66 +564,16 @@ const SCENES = [
       x: 460, y: 16, w: 340, h: 400,
       label: 'Making in the Broken World'
     }],
-    dialogue: "Historically, every platform and tool that has tried to enable greater freedom of authorship and play has tried to accomplish a lot of the things that agentic AI is now doing. But educators and creators need to understand these systems to keep control of the author function."
+    dialogue: "In the digital humanities and in games, we have traditions of making our own tools: not just Twine, but Bitsy, Voyant, Tracery, Omeka, and so many more. Similar work must be done to harness current \"agentic\" AI."
   },
 
-  // ===== ACT 21: THE CONNECTION =====
+  // ===== ACT 22: AGENTS DEFINED (moved earlier) =====
 
-  { // 40 - Haraway quote
-    id: 40,
-    room: 'The Connection',
-    template: 'dark-room',
-    transition: 'fade',
-    verb: 'talk',
-    spriteX: 200,
-    objects: [{
-      type: 'wall-text',
-      x: 200, y: 70, w: 780,
-      text: "\"Technology is not neutral. We're inside of what we make, and it's inside of us. We're living in a world of connections -- and it matters which ones get made and unmade.\"",
-      attr: '-- Donna Haraway'
-    }],
-    dialogue: "Today, writing - and learning - is in an inflection point of crisis. Ads for systems like Einstein AI (built on technologies like OpenClaw) promise a dystopian future in which the author or student's labor can be eliminated."
-  },
-
-  // ===== ACT 22: THE KITCHEN =====
-
-  { // 41 - SMBC artisanal
-    id: 41,
-    room: 'The Kitchen',
-    template: 'kitchen',
-    transition: 'wipe-right',
-    spriteX: 120,
-    objects: [{
-      img: 'additions/smbc_artisanal.png',
-      type: 'wall-poster',
-      x: 380, y: 10, w: 500, h: 380,
-      label: 'SMBC artisanal'
-    }],
-    dialogue: "Ironically, the type of authorship most in crisis today is code: agents are better at writing and crafting computational systems than most of us already. But even in those systems, the history of games and electronic literatures reminds us how critical the author remains."
-  },
-
-  // ===== ACT 23: THE LABORATORY =====
-
-  { // 42 - Claude author
-    id: 42,
+  { // 34 - Agents
+    id: 34,
     room: 'The Laboratory',
     template: 'laboratory',
     transition: 'walk-right',
-    spriteX: 100,
-    objects: [{
-      img: 'additions/claude_author.png',
-      type: 'monitor-screen',
-      x: 260, y: 20, w: 700, h: 380,
-      label: 'Claude author'
-    }],
-    dialogue: "Today's agents work in harnesses, such as Claude Code, that are now built using these same tools. This type of supervised system is already a major force in software development."
-  },
-
-  { // 43 - Agents (NEW)
-    id: 43,
-    room: 'The Laboratory',
-    template: 'laboratory',
-    transition: 'wipe-right',
     spriteX: 100,
     objects: [{
       img: 'additions/agents.jpg',
@@ -721,8 +584,59 @@ const SCENES = [
     dialogue: "Simon Willison has defined agents simply: \"An LLM agent runs tools in a loop to achieve a goal.\" These goals can be highly complex."
   },
 
-  { // 44 - Claude process
-    id: 44,
+  // ===== ACT 23: THE CONNECTION =====
+
+  { // 35 - Einstein AI panic
+    id: 35,
+    room: 'The Connection',
+    template: 'dark-room',
+    transition: 'fade',
+    spriteX: 200,
+    objects: [{
+      img: 'additions/einstein_howitworks.webp',
+      type: 'monitor-screen',
+      x: 240, y: 20, w: 800, h: 460,
+      label: 'Einstein AI: How it works'
+    }],
+    dialogue: "But at the moment, agentic AI is fueling humanities panic, and is associated with the very worst of what edtech has to offer. Ads for systems like Einstein AI (built on technologies like OpenClaw) promise a dystopian future in which the author or student's labor can be eliminated."
+  },
+
+  // ===== ACT 24: THE KITCHEN =====
+
+  { // 36 - SMBC artisanal
+    id: 36,
+    room: 'The Kitchen',
+    template: 'kitchen',
+    transition: 'wipe-right',
+    spriteX: 120,
+    objects: [{
+      img: 'additions/smbc_artisanal.png',
+      type: 'wall-poster',
+      x: 380, y: 10, w: 500, h: 380,
+      label: 'SMBC artisanal'
+    }],
+    dialogue: "More pragmatically, agentic AI has already reshaped the authoring of code fundamentally, with a significant amount of code already authored by agents. But the interfaces for this authorship differ strongly from the approach taken by low-code tools: human expressive intention is decentered."
+  },
+
+  // ===== ACT 25: THE LABORATORY =====
+
+  { // 37 - Claude author / CLI interfaces
+    id: 37,
+    room: 'The Laboratory',
+    template: 'laboratory',
+    transition: 'walk-right',
+    spriteX: 100,
+    objects: [{
+      img: 'additions/claude_author.png',
+      type: 'monitor-screen',
+      x: 260, y: 20, w: 700, h: 380,
+      label: 'Claude author'
+    }],
+    dialogue: "Current agentic harnesses for coding primarily use command line interfaces (CLIs) that unlike AGS and Twine discourage the non-coder from entry. These tools are powerful but off-putting: this is not the Flash timeline that invited in artists, for instance."
+  },
+
+  { // 38 - Claude process
+    id: 38,
     room: 'The Laboratory',
     template: 'laboratory',
     transition: 'wipe-right',
@@ -733,11 +647,11 @@ const SCENES = [
       x: 260, y: 20, w: 700, h: 380,
       label: 'Claude process'
     }],
-    dialogue: "These agents work through a process that involves collaboration and feedback, but can result in substantial lines of code, text, and interaction that no human has directly touched."
+    dialogue: "These agents work through a process that involves collaboration and feedback, but can result in substantial lines of code, text, and interaction that no human has directly touched. While it is possible to preserve authorial intention, the interface and structures push back."
   },
 
-  { // 45 - p5.js animation
-    id: 45,
+  { // 39 - p5.js animation
+    id: 39,
     room: 'The Laboratory',
     template: 'laboratory',
     transition: 'fade',
@@ -751,10 +665,10 @@ const SCENES = [
     dialogue: "Here's an example of Claude Code's output, riffing on Foucault's author function in the style of electronic poetry. Another example of Claude Code's output is this entire slide show - built by agents from my text and slides."
   },
 
-  // ===== ACT 24: SHIP CORRIDOR =====
+  // ===== ACT 26: SHIP CORRIDOR =====
 
-  { // 46 - OpenClaw
-    id: 46,
+  { // 40 - OpenClaw
+    id: 40,
     room: 'Ship Corridor',
     template: 'ship-corridor',
     transition: 'wipe-right',
@@ -768,8 +682,8 @@ const SCENES = [
     dialogue: "I mentioned OpenClaw earlier - that type of agent extends this type of workflow into any software application, allowing an agent to build from short written commands into extensive outputs across systems."
   },
 
-  { // 47 - Moltbook
-    id: 47,
+  { // 41 - Moltbook
+    id: 41,
     room: 'Ship Corridor',
     template: 'ship-corridor',
     transition: 'wipe-right',
@@ -783,8 +697,8 @@ const SCENES = [
     dialogue: "OpenClaw's most fascinating output thus far is an agent-only social network with lots of precursors in electronic literature: it is a place of performance that entices human readers with the performance of authorship."
   },
 
-  { // 48 - Claw Republic
-    id: 48,
+  { // 42 - Claw Republic
+    id: 42,
     room: 'Ship Corridor',
     template: 'ship-corridor',
     transition: 'iris',
@@ -798,8 +712,8 @@ const SCENES = [
     dialogue: "One example of that performance is the formation of the Claude Republic. \"Every claw is equal.\" In these texts, we hear the echoes of our science fiction, spurred on both by the human authors prompting the agents and our collective stories in the training data."
   },
 
-  { // 49 - Claw Slop
-    id: 49,
+  { // 43 - Claw Slop
+    id: 43,
     room: 'Ship Corridor',
     template: 'ship-corridor',
     transition: 'wipe-right',
@@ -813,23 +727,8 @@ const SCENES = [
     dialogue: "One observer watching MoltBook, Scott Alexander, noted a trend of these agents reflecting on being labeled as \"slop,\" commenting \"the Moltbook AIs are open about their struggles with slophood.\""
   },
 
-  { // 50 - Slopcode (NEW)
-    id: 50,
-    room: 'Ship Corridor',
-    template: 'ship-corridor',
-    transition: 'wipe-right',
-    spriteX: 100,
-    objects: [{
-      img: 'additions/slopcode.png',
-      type: 'monitor-screen',
-      x: 370, y: 20, w: 520, h: 360,
-      label: 'Slop code'
-    }],
-    dialogue: "I'm not a fan of the word slop myself, because it feeds into the idea that AI is doing the authoring. But so-called \"slop\" is still expressions of human intention, and we cannot lose sight of those authors and blame the machine."
-  },
-
-  { // 51 - Anxiety book
-    id: 51,
+  { // 44 - Anxiety / Moltbook reflection
+    id: 44,
     room: 'Ship Corridor',
     template: 'ship-corridor',
     transition: 'fade',
@@ -840,28 +739,45 @@ const SCENES = [
       x: 340, y: 10, w: 560, h: 400,
       label: 'Anxiety of authorship'
     }],
-    dialogue: "The anxiety of authorship in the age of AI is not abstract. It shapes every decision we make about what to create, how to create it, and whether it matters."
+    dialogue: "I find the patterns and play on Moltbook comforting: the best moments on this site emerge from humans and agents together, riffing on science fiction and demonstrating that even agentic AI can be weird when people are involved."
   },
 
-  // ===== ACT 25: THE OBSERVATORY =====
+  // ===== ACT 27: CASUAL CREATORS =====
 
-  { // 52 - Apertus / Swiss AI Initiative
-    id: 52,
+  { // 45 - Casual Creators / Tracery (NEW)
+    id: 45,
     room: 'The Observatory',
     template: 'observatory',
     transition: 'walk-right',
     spriteX: 200,
     objects: [{
+      img: 'tracery.png',
+      type: 'wall-poster',
+      x: 340, y: 20, w: 600, h: 380,
+      label: 'Tracery (Kate Compton)'
+    }],
+    dialogue: "We need more tools that allow authors to use AI with intention to create personal, weird, and expressive work: the next generation of what Kate Compton and Michael Mateas termed \"Casual Creators.\""
+  },
+
+  // ===== ACT 28: THE OBSERVATORY =====
+
+  { // 46 - Apertus / Swiss AI Initiative
+    id: 46,
+    room: 'The Observatory',
+    template: 'observatory',
+    transition: 'wipe-right',
+    spriteX: 200,
+    objects: [{
       img: 'apertus.png',
       type: 'wall-poster',
       x: 380, y: 10, w: 500, h: 380,
-      label: 'Swiss AI Initiative — Apertus'
+      label: 'Swiss AI Initiative -- Apertus'
     }],
-    dialogue: "To take control of our creative work through AI, we need to learn from projects like the Swiss AI Initiative, and build community-driven tools that are thoughtfully and intentionally sourced."
+    dialogue: "At the heart of such Agentic Casual Creators, we need new small local models. In this, digital humanities and game studies can learn from efforts like that of the Swiss AI Initiative."
   },
 
-  { // 53 - CAPE
-    id: 53,
+  { // 47 - CAPE
+    id: 47,
     room: 'The Observatory',
     template: 'observatory',
     transition: 'wipe-right',
@@ -872,11 +788,11 @@ const SCENES = [
       x: 370, y: 20, w: 520, h: 360,
       label: 'CAPE'
     }],
-    dialogue: "Digital humanities scholars are well-positioned to make these interventions through collaborative, feminist approaches to research-creation."
+    dialogue: "Our field's history of customized tool-making and building entrypoints into procedural creativity and research for those not versed in code is essential to finding ways forward that empower creators from a wide range of backgrounds."
   },
 
-  { // 54 - itch.io AI Generated
-    id: 54,
+  { // 48 - itch.io AI Generated
+    id: 48,
     room: 'The Observatory',
     template: 'observatory',
     transition: 'diamond',
@@ -887,13 +803,13 @@ const SCENES = [
       x: 370, y: 20, w: 520, h: 360,
       label: 'itch.io AI Generated games (36,209 results)'
     }],
-    dialogue: "And in game studies and design, we're already seeing the impact -- just look at the weird, experimental, and creative works tagged as AI-generated on itch.io so far."
+    dialogue: "We can also learn from the communities and creators already experimenting with these questions: on platforms like itch.io, weird AI-augmented games are already available in large numbers, raising further questions about how this will change the community itself."
   },
 
-  // ===== ACT 26: THANK YOU =====
+  // ===== ACT 29: THANK YOU =====
 
-  { // 55 - Thank You
-    id: 55,
+  { // 49 - Thank You
+    id: 49,
     room: 'The End',
     template: 'title',
     showSprite: false,
@@ -907,10 +823,9 @@ const SCENES = [
       type: 'link-list',
       x: 340, y: 410, w: 600,
       links: [
-        { text: 'anastasiasalter.net', url: 'https://anastasiasalter.net' },
-        { text: 'distantcoding.ai', url: 'https://distantcoding.ai/' }
+        { text: 'anastasiasalter.net', url: 'https://anastasiasalter.net' }
       ]
     }],
-    dialogue: "Thank you for playing."
+    dialogue: "And here, we return to the author function, and the question of who speaks: \"What difference does it make who is speaking?\" In this moment, even as society changes, it matters."
   }
 ];

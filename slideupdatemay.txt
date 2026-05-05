@@ -1,0 +1,63 @@
+Slide 4 - rewrite text: How does the author function change as AI becomes a dominant mode of authorship? Kirschenbaum's framework of the textpocalypse asks: what if AI, instead of being trained on human writing, is gradually trained more and more on text that has come from AI? 
+
+Cut Slide 5 + 6 + 7 + 8
+
+Slide 9 - This anxiety of computational reshaping of authorship is not new. In my field, electronic literature, we've been forecasting the end of books for a long time: here's Robert Coover declaring hypertext will kill the novel in 1992.
+
+Slide 10 - The novel isn't dead, but it is now fully born-digital, and the word process is just one of the forms of cultural software that reshaped how we write before AI got involved.
+
+Slide 12 - The humanities as a field have been consumed by the panic over writing and AI's ability to displace the human as author. But the impact is far broader than the word processor: every form of cultural software is shifting, including other forms of creative output from hypertext novels to games.
+
+Slide 13 - I've spent most of my career writing about weird, personal forms of storytelling through digital forms, starting with this first book, which came out of an interest in the expressive possibilities of personal games
+
+Cut slide 14 + 15
+
+slide 16 - I grew up on the graphic adventure games like Day of the Tentacle that inspired others to create tools like Adventure Game Studio or Inform 7: tools that would allow those without a development team to make an expressive work.
+
+cut slide 17 + 18
+
+slide 22 - The death of Adobe Flash is a warning about how shifts in cultural software can fundamentally destroy creative and expressive works. Apple's decision to tighten their grip on creativity through the app store led to many works being rendered unplayable and unwatchable.
+
+slide 23 - As artist and game designer Natalie Lawhead noted looking back at the remains Flash left behind, a technology that enables creative output for "the little people" was easily erased.
+
+
+slide 26 - don't capitalize "word processors"
+
+slide 31 - Modify: "authored almost entirely by one person using GameMaker, a low-code tool similar to Adventure Game Studio."
+
+slide 33 - add quotes around "Despite everything, it's still you."
+
+
+add a new slide after current 36 - To even talk about the potential of AI to expand rather than contract authorship feels uncomfortable as a feminist scholar, as so many of the current AI tools are both built on marginalized labor and intended to dehumanize. Image: grok.png
+
+slide 37: change the box for this image to match the ratio of it, and go longer to be readable text. modify text: "I find myself trying to author, and create, on platforms and with tools that are decidedly not meant for marginalized creators."
+
+slide 38: It is against these challenges that the practices of research creation and critical making provide guidance: we need new tools for authorship that, like AGS and Twine, center the personal.
+
+slide 39: In the digital humanities and in games, we have traditions of making our own tools: not just Twine, but Bitsy, Voyant, Tracery, Omeka, and so many more. Similar work must be done to harness current "agentic" AI.
+
+slide 40: But at the moment, agentic AI is fueling humanities panic, and is associated with the very worst of what edtech has to offer. Ads for systems like Einstein AI (built on technologies like OpenClaw) promise a dystopian future in which the author or student's labor can be eliminated.
+
+Slide 41: More pragmatically, agentic AI has already reshaped the authoring of code fundamentally, with a significant amount of code already authored by agents. But the interfaces for this authorship differ strongly from the approach taken by low-code tools: human expressive intention is decentered.
+
+Slide 42: Current agentic harnesses for coding primarily use command line interfaces (CLIs) that unlike AGS and Twine discourage the non-coder from entry. These tools are powerful but off-putting: this is not the Flash timeline that invited in artists, for instance.
+
+move slide 43 to between 39 + 41
+
+44: Add to text: While it is possible to preserve authorial intention, the interface and structures push back.
+
+cut slide 50
+
+51: I find the patterns and play on Moltbook comforting: the best moments on this site emerge from humans and agents together, riffing on science fiction and demonstrating that even agentic AI can be weird when people are involved.
+
+add new slide after 51: We need more tools that allow authors to use AI with intention to create personal, weird, and expressive work: the next generation of what Kate Compton and Michael Mateas termed "Casual Creators." Slide: tracery.png
+
+
+slide 52: At the heart of such Agentic Casual Creators, we need new small local models. In this, digital humanities and game studies can learn from efforts like that of the Swiss AI Initiative.
+
+slide 53: Our field's history of customized tool-making and building entrypoints into procedural creativity and research for those not versed in code is essential to finding ways forward that empower creators from a wide range of backgrounds.
+
+slide 54: We can also learn from the communities and creators already experimenting with these questions: on platforms like itch.io, weird AI-augmented games are already available in large numbers, raising further questions about how this will change the community itself.
+
+slide 55: remove distantcoding.ai. Change text: And here, we return to the author function, and the question of who speaks: "What difference does it make who is speaking?" In this moment, even as society changes, it matters.
+

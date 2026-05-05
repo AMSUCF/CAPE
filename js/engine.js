@@ -340,7 +340,7 @@ const Engine = (() => {
       room.appendChild(fire);
     }
 
-    if (scene.template === 'title' || scene.template === 'exterior' || scene.template === 'observatory') {
+    if (scene.template === 'title' || scene.template === 'exterior' || scene.template === 'observatory' || scene.template === 'galaxy-hall') {
       const stars = document.createElement('div');
       stars.className = 'star-field';
       room.appendChild(stars);
@@ -373,6 +373,7 @@ const Engine = (() => {
   function createObject(obj, index) {
     const wrapper = document.createElement('div');
     wrapper.className = 'scene-object obj-' + (obj.type || 'wall-poster');
+    if (obj.className) wrapper.className += ' ' + obj.className;
     wrapper.style.left = (obj.x || 0) + 'px';
     wrapper.style.top = (obj.y || 0) + 'px';
     if (obj.w) wrapper.style.width = obj.w + 'px';

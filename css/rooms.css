@@ -19,6 +19,23 @@
   background: linear-gradient(to bottom, #0a0a14 0%, #0a0a14 40%, #0e1025 75%, #141432 100%);
 }
 
+/* ================================================
+   1b. GALAXY HALL - Deep space corridor (no portraits)
+   ================================================ */
+.room-galaxy-hall {
+  --bg: #050510;
+}
+
+.room-galaxy-hall .room-bg {
+  background:
+    /* Distant nebula glows */
+    radial-gradient(ellipse 360px 200px at 25% 30%, rgba(120, 80, 200, 0.18), transparent 70%),
+    radial-gradient(ellipse 320px 180px at 75% 65%, rgba(40, 110, 180, 0.16), transparent 70%),
+    radial-gradient(ellipse 240px 140px at 50% 90%, rgba(180, 60, 140, 0.10), transparent 70%),
+    /* Deep space gradient */
+    linear-gradient(to bottom, #050510 0%, #07071c 50%, #0a0a24 100%);
+}
+
 /* --- Cityscape silhouette --- */
 .cityscape {
   position: absolute;

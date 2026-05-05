@@ -256,6 +256,32 @@
   font-size: 10px;
 }
 
+/* DON'T PANIC banner — large friendly letters in red on black */
+.obj-wall-text.panic-banner {
+  background: #050505;
+  border: 6px solid #1a1a1a;
+  border-left: 6px solid #1a1a1a;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.8),
+    0 0 32px rgba(255, 40, 40, 0.25),
+    inset 0 0 0 3px #050505,
+    inset 0 0 0 5px #2a0a0a;
+  padding: 28px 32px;
+  max-width: none;
+  text-align: center;
+}
+
+.obj-wall-text.panic-banner .wall-text-content {
+  font-family: var(--font-main);
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: 4px;
+  color: #ff2a2a;
+  text-shadow:
+    2px 2px 0 #5a0000,
+    0 0 12px rgba(255, 40, 40, 0.55);
+}
+
 /* Link list */
 .obj-link-list {
   display: flex;
